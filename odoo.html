@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Odoo Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6", // blue-500
+              "background-light": "#f8fafc", // slate-50
+              "background-dark": "#0f172a", // slate-900
+            },
+            fontFamily: {
+              display: ["Roboto", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem", // 8px
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .material-icons {
+        font-size: 28px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+      }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-700 dark:text-slate-300">
+<div class="flex h-screen overflow-hidden">
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-slate-800/50 p-6 flex-col justify-between h-full hidden lg:flex">
+<div>
+<div class="flex items-center space-x-3 mb-8">
+<div class="bg-primary p-2 rounded-full">
+<span class="material-icons text-white !text-2xl">grid_view</span>
+</div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">Odoo</h1>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center space-x-3 px-4 py-2 rounded-md bg-primary text-white font-medium" href="#">
+<span class="material-icons !text-2xl">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
+<span class="material-icons !text-2xl">inventory_2</span>
+<span>Products</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
+<span class="material-icons !text-2xl">shopping_cart</span>
+<span>Sales</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
+<span class="material-icons !text-2xl">receipt_long</span>
+<span>Invoicing</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
+<span class="material-icons !text-2xl">people</span>
+<span>Contacts</span>
+</a>
+</nav>
+</div>
+<div>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
+<span class="material-icons !text-2xl">settings</span>
+<span>Settings</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
+<span class="material-icons !text-2xl">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-6 lg:p-8 overflow-y-auto">
+<div class="flex flex-col h-full">
+<header class="flex justify-between items-center mb-6 flex-shrink-0">
+<div>
+<h2 class="text-3xl font-bold text-slate-900 dark:text-white">Dashboard</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Welcome back, access your modules quickly.</p>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+<span class="material-icons">notifications</span>
+</button>
+<div class="flex items-center space-x-3">
+<img alt="User avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn6KKaWO0DlgJj6RRBPrI8hyO7gmpNiwlLCmDFA3SSjZGND7xKRme-IvaNHuoYWJMKzH_4d3dMlRB5z9fOyy-jJNlSI1xmaAqLQiR6ae8Vb7F3Z_-uaKV6nd9PlouqCROM5cegc-_A4yHPNX203XNy6oafRwiJd833areKMPCwe4X8O2Upord6w83zdhhW5K0hNqh9SQixm1-dNjkLZU_GkbnjrzT4c345V6DPYI_tTWLoS-y8BBLXwjMbImampIz9hFdKGTYjsck"/>
+<div>
+<p class="font-semibold text-slate-800 dark:text-slate-200">Michael Adele</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">My Company</p>
+</div>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 2xl:grid-cols-8 gap-4 mb-6">
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">chat</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Discuss</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">perm_contact_calendar</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Contacts</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">trending_up</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Sales</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">language</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Website</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">shopping_bag</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Purchase</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">inventory</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Inventory</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">precision_manufacturing</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Manufacturing</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">fact_check</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Quality</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">request_quote</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Accounting</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">group_add</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Employees</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">build</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Maintenance</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">dashboard_customize</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Dashboards</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">apps</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Apps</h3>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
+<span class="material-icons text-primary" style="font-size: 32px;">settings</span>
+<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Settings</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg lg:col-span-1">
+<div class="flex items-center mb-3">
+<span class="material-icons text-primary !text-2xl">construction</span>
+<h3 class="ml-3 text-lg font-semibold text-slate-800 dark:text-slate-200">Services</h3>
+</div>
+<ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+<li class="flex items-start"><span class="material-icons text-primary !text-base mt-0.5 mr-2">check_circle_outline</span><span>Odoo ERP Implementation &amp; Customization</span></li>
+<li class="flex items-start"><span class="material-icons text-primary !text-base mt-0.5 mr-2">check_circle_outline</span><span>Training for new users and employees</span></li>
+<li class="flex items-start"><span class="material-icons text-primary !text-base mt-0.5 mr-2">check_circle_outline</span><span>Data Migration from other systems</span></li>
+<li class="flex items-start"><span class="material-icons text-primary !text-base mt-0.5 mr-2">check_circle_outline</span><span>Third-party app integration</span></li>
+</ul>
+</div>
+<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg lg:col-span-2">
+<div class="flex items-center mb-3">
+<span class="material-icons text-primary !text-2xl">extension</span>
+<h3 class="ml-3 text-lg font-semibold text-slate-800 dark:text-slate-200">Addons &amp; Project Experience</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<h4 class="font-semibold text-slate-700 dark:text-slate-300 mb-2 text-sm">Featured Addons</h4>
+<div class="space-y-2">
+<div class="bg-slate-100 dark:bg-slate-700/50 p-2 rounded-md">
+<p class="font-medium text-slate-800 dark:text-slate-200 text-sm">Brazilian Localization</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Add fiscal and accounting features for Brazil.</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-700/50 p-2 rounded-md">
+<p class="font-medium text-slate-800 dark:text-slate-200 text-sm">Fleet Management</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Enhanced vehicle tracking and maintenance.</p>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-slate-700 dark:text-slate-300 mb-2 text-sm">Project Highlights</h4>
+<div class="space-y-2">
+<div class="bg-slate-100 dark:bg-slate-700/50 p-2 rounded-md">
+<p class="font-medium text-slate-800 dark:text-slate-200 text-sm">Manufacturing Plant</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Streamlined production and inventory system.</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-700/50 p-2 rounded-md">
+<p class="font-medium text-slate-800 dark:text-slate-200 text-sm">Retail Chain</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">POS and e-commerce integration for sales.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto flex-shrink-0">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Our Portfolio</h2>
+<div class="relative">
+<div class="overflow-x-auto">
+<div class="flex space-x-4 pb-4 -ml-1 pl-1">
+<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
+<img alt="Project 1: CRM Customization" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnVysrBqsdI54LKAsEAEiq6pYI4QQ-CLRLNM2CUINL5SGwns-iyy1v7-YF6u6H-jCleQ8S9xbH89P0Jx-hYzNrQyC4skoeDhVJndDsLsT3urVSKZ9pVAwAP_aQ_s8x500MFSgta-mbdwtTHxRk-Gubo6Z2vcy39UBTMXFdJw_CK4wRaDd6jyIalVY9iZpR4Xh3WCMfxe7XfTGL0dGHcdKwsRlIFZj13hRCIuhhelvolUwsHvHwzawLlxNIn87taROOtSzCWZxYfD8"/>
+<div class="p-3">
+<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">CRM Customization</h3>
+<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Tailored CRM module for a sales team, improving lead tracking and conversion rates.</p>
+</div>
+</div>
+<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
+<img alt="Project 2: E-commerce Integration" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbYGcbjq8F3inKIuFJHTSY8ovp_TkLXkQg6vZVX85OrSp4m6-L5GEeFaRKHFM7heOqMR_Y56S7wDAYTH8_Ry2Az-juEIgkTWjbMwOUH8BvDwxURL_X1H3zikHgpwBXOE4WikPnnTQkVoFdaT6uDu5SYYdQTIxizjJDxpXPHUngLhYr2Jm0HaDHXR04URM_GrRnVM-V4N9GGAuymqLVYrMOawEYs7pjqrYDlv6bJNHLg91sH97UyKinLbSkJy-Csrh2KZQjjrL-wjs"/>
+<div class="p-3">
+<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">E-commerce Integration</h3>
+<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Seamlessly integrated Odoo with a major e-commerce platform for real-time inventory.</p>
+</div>
+</div>
+<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
+<img alt="Project 3: Advanced Accounting Addon" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHJw78wrv4WVQoXMWEtWukKPCYrzautsHREhsF-jYGLcoBQQF-I8VDUe6_7OO9K64ivOrlLven40qblOYtMs8kXtXlvmQZXOOqPDfyuqtkr0dsdz3GwPVGWvRV9E4ygbkKkrHqXXhCFCvgaiiyIcbYFRag3sHOcB2FDAQWCNUGHkZcGOxDQDZcbemStQM5KtdWP6f3qt65-TePMbf8dx8xCbMJleuL-Ac88i3k04Omr-H-lydQhag9z2E0MjqtbDsur9I7gcwyV9I"/>
+<div class="p-3">
+<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">Advanced Accounting</h3>
+<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Developed a custom addon for complex financial reporting and multi-currency transactions.</p>
+</div>
+</div>
+<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
+<img alt="Project 4: HR &amp; Payroll System" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD075rQ9TXYCmGwDvAn2oe2zbRjUdhz2NkCE2WddqqIyf8Tf2zdWONetVd2TedqbFjEIhv8YjnwxAcqAsg6ZiGm_mTMXYAPdK-tUrD10jJJ3aF0Esc_55BCtTWox8HHPbEyZXDufcIpOEW275cWmrExEq1wfJJpTqoIdx3nFAqMxJlAdb4_yFS6XsfUCsQInHTUpveUxbeKfK_NqFhlvUBcaOwQFOvorDmtNgiSmjFReVeTLDk59LEj3nCUjOGJBOeQ69J_ENEy4oM"/>
+<div class="p-3">
+<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">HR &amp; Payroll System</h3>
+<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Full implementation of HR modules, including attendance, payroll, and recruitment.</p>
+</div>
+</div>
+<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
+<img alt="Project 5: Manufacturing Automation" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOkibSFi1WbbmNqpq7BKe9EYkLWPcWP1JgCaWKs96kO7TYy_T_5Ql6m6PFrMbxKx1OaO-QZrF8ZVZd5VHjIFpXCykdX7PEH6lBVzB3C90GerlsKMuJOhP0jUOcmAZ3Ps560ACFJrUUgA19GQMAJdvRw1Ng1ks0cBaomJoI6gPlQ-0o2zQg43_8cf86rTDZCx9PR9clSn37tPQ8l0TLeriIes3SG-EsNqUKhfofbNnGlWa6AhJbEgTpKVa0LenGYM89d4q-XennNrk"/>
+<div class="p-3">
+<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">Manufacturing Automation</h3>
+<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Automated manufacturing workflows with IoT integration for a smart factory.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute inset-y-0 -left-4 -right-4 flex justify-between items-center pointer-events-none">
+<button class="pointer-events-auto bg-white/50 dark:bg-slate-900/50 hover:bg-white dark:hover:bg-slate-900 backdrop-blur-sm p-2 rounded-full transition">
+<span class="material-icons text-slate-700 dark:text-slate-300">chevron_left</span>
+</button>
+<button class="pointer-events-auto bg-white/50 dark:bg-slate-900/50 hover:bg-white dark:hover:bg-slate-900 backdrop-blur-sm p-2 rounded-full transition">
+<span class="material-icons text-slate-700 dark:text-slate-300">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex justify-center mt-2 space-x-2">
+<button class="w-2 h-2 rounded-full bg-primary"></button>
+<button class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary/70 dark:hover:bg-primary/70 transition"></button>
+<button class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary/70 dark:hover:bg-primary/70 transition"></button>
+<button class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary/70 dark:hover:bg-primary/70 transition"></button>
+<button class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary/70 dark:hover:bg-primary/70 transition"></button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
