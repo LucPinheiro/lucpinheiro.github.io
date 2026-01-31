@@ -1,277 +1,459 @@
-<!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Odoo Dashboard</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-<script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#3b82f6", // blue-500
-              "background-light": "#f8fafc", // slate-50
-              "background-dark": "#0f172a", // slate-900
-            },
-            fontFamily: {
-              display: ["Roboto", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.5rem", // 8px
-            },
-          },
-        },
-      };
-    </script>
-<style>
-      .material-icons {
-        font-size: 28px;
-        line-height: 1;
-        letter-spacing: normal;
-        text-transform: none;
-        display: inline-block;
-        white-space: nowrap;
-        word-wrap: normal;
-        direction: ltr;
-        -webkit-font-feature-settings: 'liga';
-        -webkit-font-smoothing: antialiased;
-      }
-    </style>
-</head>
-<body class="font-display bg-background-light dark:bg-background-dark text-slate-700 dark:text-slate-300">
-<div class="flex h-screen overflow-hidden">
-<aside class="w-64 flex-shrink-0 bg-white dark:bg-slate-800/50 p-6 flex-col justify-between h-full hidden lg:flex">
-<div>
-<div class="flex items-center space-x-3 mb-8">
-<div class="bg-primary p-2 rounded-full">
-<span class="material-icons text-white !text-2xl">grid_view</span>
-</div>
-<h1 class="text-2xl font-bold text-slate-900 dark:text-white">Odoo</h1>
-</div>
-<nav class="space-y-2">
-<a class="flex items-center space-x-3 px-4 py-2 rounded-md bg-primary text-white font-medium" href="#">
-<span class="material-icons !text-2xl">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
-<span class="material-icons !text-2xl">inventory_2</span>
-<span>Products</span>
-</a>
-<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
-<span class="material-icons !text-2xl">shopping_cart</span>
-<span>Sales</span>
-</a>
-<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
-<span class="material-icons !text-2xl">receipt_long</span>
-<span>Invoicing</span>
-</a>
-<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
-<span class="material-icons !text-2xl">people</span>
-<span>Contacts</span>
-</a>
-</nav>
-</div>
-<div>
-<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
-<span class="material-icons !text-2xl">settings</span>
-<span>Settings</span>
-</a>
-<a class="flex items-center space-x-3 px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors" href="#">
-<span class="material-icons !text-2xl">logout</span>
-<span>Log Out</span>
-</a>
-</div>
-</aside>
-<main class="flex-1 p-6 lg:p-8 overflow-y-auto">
-<div class="flex flex-col h-full">
-<header class="flex justify-between items-center mb-6 flex-shrink-0">
-<div>
-<h2 class="text-3xl font-bold text-slate-900 dark:text-white">Dashboard</h2>
-<p class="text-slate-500 dark:text-slate-400 mt-1">Welcome back, access your modules quickly.</p>
-</div>
-<div class="flex items-center space-x-4">
-<button class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-<span class="material-icons">notifications</span>
-</button>
-<div class="flex items-center space-x-3">
-<img alt="User avatar" class="w-10 h-10 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn6KKaWO0DlgJj6RRBPrI8hyO7gmpNiwlLCmDFA3SSjZGND7xKRme-IvaNHuoYWJMKzH_4d3dMlRB5z9fOyy-jJNlSI1xmaAqLQiR6ae8Vb7F3Z_-uaKV6nd9PlouqCROM5cegc-_A4yHPNX203XNy6oafRwiJd833areKMPCwe4X8O2Upord6w83zdhhW5K0hNqh9SQixm1-dNjkLZU_GkbnjrzT4c345V6DPYI_tTWLoS-y8BBLXwjMbImampIz9hFdKGTYjsck"/>
-<div>
-<p class="font-semibold text-slate-800 dark:text-slate-200">Lu Pinheiro</p>
-<p class="text-sm text-slate-500 dark:text-slate-400">My Company</p>
-</div>
-</div>
-</div>
-</header>
-<div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-7 2xl:grid-cols-8 gap-4 mb-6">
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">chat</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Discuss</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">perm_contact_calendar</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Contacts</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">trending_up</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Sales</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">language</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Website</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">shopping_bag</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Purchase</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">inventory</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Inventory</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">precision_manufacturing</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Manufacturing</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">fact_check</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Quality</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">request_quote</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Accounting</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">group_add</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Employees</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">build</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Maintenance</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">dashboard_customize</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Dashboards</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">apps</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Apps</h3>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center">
-<span class="material-icons text-primary" style="font-size: 32px;">settings</span>
-<h3 class="mt-2 text-sm font-semibold text-slate-800 dark:text-slate-200">Settings</h3>
-</div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg lg:col-span-1">
-<div class="flex items-center mb-3">
-<span class="material-icons text-primary !text-2xl">construction</span>
-<h3 class="ml-3 text-lg font-semibold text-slate-800 dark:text-slate-200">Services</h3>
-</div>
-<ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
-<li class="flex items-start"><span class="material-icons text-primary !text-base mt-0.5 mr-2">check_circle_outline</span><span>Odoo ERP Implementation &amp; Customization</span></li>
-<li class="flex items-start"><span class="material-icons text-primary !text-base mt-0.5 mr-2">check_circle_outline</span><span>Training for new users and employees</span></li>
-<li class="flex items-start"><span class="material-icons text-primary !text-base mt-0.5 mr-2">check_circle_outline</span><span>Data Migration from other systems</span></li>
-<li class="flex items-start"><span class="material-icons text-primary !text-base mt-0.5 mr-2">check_circle_outline</span><span>Third-party app integration</span></li>
-</ul>
-</div>
-<div class="bg-white dark:bg-slate-800/50 p-4 rounded-lg lg:col-span-2">
-<div class="flex items-center mb-3">
-<span class="material-icons text-primary !text-2xl">extension</span>
-<h3 class="ml-3 text-lg font-semibold text-slate-800 dark:text-slate-200">Addons &amp; Project Experience</h3>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div>
-<h4 class="font-semibold text-slate-700 dark:text-slate-300 mb-2 text-sm">Featured Addons</h4>
-<div class="space-y-2">
-<div class="bg-slate-100 dark:bg-slate-700/50 p-2 rounded-md">
-<p class="font-medium text-slate-800 dark:text-slate-200 text-sm">Brazilian Localization</p>
-<p class="text-xs text-slate-500 dark:text-slate-400">Add fiscal and accounting features for Brazil.</p>
-</div>
-<div class="bg-slate-100 dark:bg-slate-700/50 p-2 rounded-md">
-<p class="font-medium text-slate-800 dark:text-slate-200 text-sm">Fleet Management</p>
-<p class="text-xs text-slate-500 dark:text-slate-400">Enhanced vehicle tracking and maintenance.</p>
-</div>
-</div>
-</div>
-<div>
-<h4 class="font-semibold text-slate-700 dark:text-slate-300 mb-2 text-sm">Project Highlights</h4>
-<div class="space-y-2">
-<div class="bg-slate-100 dark:bg-slate-700/50 p-2 rounded-md">
-<p class="font-medium text-slate-800 dark:text-slate-200 text-sm">Manufacturing Plant</p>
-<p class="text-xs text-slate-500 dark:text-slate-400">Streamlined production and inventory system.</p>
-</div>
-<div class="bg-slate-100 dark:bg-slate-700/50 p-2 rounded-md">
-<p class="font-medium text-slate-800 dark:text-slate-200 text-sm">Retail Chain</p>
-<p class="text-xs text-slate-500 dark:text-slate-400">POS and e-commerce integration for sales.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="mt-auto flex-shrink-0">
-<h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Our Portfolio</h2>
-<div class="relative">
-<div class="overflow-x-auto">
-<div class="flex space-x-4 pb-4 -ml-1 pl-1">
-<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
-<img alt="Project 1: CRM Customization" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnVysrBqsdI54LKAsEAEiq6pYI4QQ-CLRLNM2CUINL5SGwns-iyy1v7-YF6u6H-jCleQ8S9xbH89P0Jx-hYzNrQyC4skoeDhVJndDsLsT3urVSKZ9pVAwAP_aQ_s8x500MFSgta-mbdwtTHxRk-Gubo6Z2vcy39UBTMXFdJw_CK4wRaDd6jyIalVY9iZpR4Xh3WCMfxe7XfTGL0dGHcdKwsRlIFZj13hRCIuhhelvolUwsHvHwzawLlxNIn87taROOtSzCWZxYfD8"/>
-<div class="p-3">
-<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">CRM Customization</h3>
-<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Tailored CRM module for a sales team, improving lead tracking and conversion rates.</p>
-</div>
-</div>
-<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
-<img alt="Project 2: E-commerce Integration" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbYGcbjq8F3inKIuFJHTSY8ovp_TkLXkQg6vZVX85OrSp4m6-L5GEeFaRKHFM7heOqMR_Y56S7wDAYTH8_Ry2Az-juEIgkTWjbMwOUH8BvDwxURL_X1H3zikHgpwBXOE4WikPnnTQkVoFdaT6uDu5SYYdQTIxizjJDxpXPHUngLhYr2Jm0HaDHXR04URM_GrRnVM-V4N9GGAuymqLVYrMOawEYs7pjqrYDlv6bJNHLg91sH97UyKinLbSkJy-Csrh2KZQjjrL-wjs"/>
-<div class="p-3">
-<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">E-commerce Integration</h3>
-<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Seamlessly integrated Odoo with a major e-commerce platform for real-time inventory.</p>
-</div>
-</div>
-<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
-<img alt="Project 3: Advanced Accounting Addon" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHJw78wrv4WVQoXMWEtWukKPCYrzautsHREhsF-jYGLcoBQQF-I8VDUe6_7OO9K64ivOrlLven40qblOYtMs8kXtXlvmQZXOOqPDfyuqtkr0dsdz3GwPVGWvRV9E4ygbkKkrHqXXhCFCvgaiiyIcbYFRag3sHOcB2FDAQWCNUGHkZcGOxDQDZcbemStQM5KtdWP6f3qt65-TePMbf8dx8xCbMJleuL-Ac88i3k04Omr-H-lydQhag9z2E0MjqtbDsur9I7gcwyV9I"/>
-<div class="p-3">
-<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">Advanced Accounting</h3>
-<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Developed a custom addon for complex financial reporting and multi-currency transactions.</p>
-</div>
-</div>
-<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
-<img alt="Project 4: HR &amp; Payroll System" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD075rQ9TXYCmGwDvAn2oe2zbRjUdhz2NkCE2WddqqIyf8Tf2zdWONetVd2TedqbFjEIhv8YjnwxAcqAsg6ZiGm_mTMXYAPdK-tUrD10jJJ3aF0Esc_55BCtTWox8HHPbEyZXDufcIpOEW275cWmrExEq1wfJJpTqoIdx3nFAqMxJlAdb4_yFS6XsfUCsQInHTUpveUxbeKfK_NqFhlvUBcaOwQFOvorDmtNgiSmjFReVeTLDk59LEj3nCUjOGJBOeQ69J_ENEy4oM"/>
-<div class="p-3">
-<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">HR &amp; Payroll System</h3>
-<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Full implementation of HR modules, including attendance, payroll, and recruitment.</p>
-</div>
-</div>
-<div class="flex-shrink-0 w-full sm:w-[48%] md:w-[31%] lg:w-[23.5%] xl:w-[19%] bg-white dark:bg-slate-800/50 rounded-lg overflow-hidden snap-center">
-<img alt="Project 5: Manufacturing Automation" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOkibSFi1WbbmNqpq7BKe9EYkLWPcWP1JgCaWKs96kO7TYy_T_5Ql6m6PFrMbxKx1OaO-QZrF8ZVZd5VHjIFpXCykdX7PEH6lBVzB3C90GerlsKMuJOhP0jUOcmAZ3Ps560ACFJrUUgA19GQMAJdvRw1Ng1ks0cBaomJoI6gPlQ-0o2zQg43_8cf86rTDZCx9PR9clSn37tPQ8l0TLeriIes3SG-EsNqUKhfofbNnGlWa6AhJbEgTpKVa0LenGYM89d4q-XennNrk"/>
-<div class="p-3">
-<h3 class="font-semibold text-base text-slate-800 dark:text-slate-200">Manufacturing Automation</h3>
-<p class="mt-1 text-xs text-slate-600 dark:text-slate-400">Automated manufacturing workflows with IoT integration for a smart factory.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="absolute inset-y-0 -left-4 -right-4 flex justify-between items-center pointer-events-none">
-<button class="pointer-events-auto bg-white/50 dark:bg-slate-900/50 hover:bg-white dark:hover:bg-slate-900 backdrop-blur-sm p-2 rounded-full transition">
-<span class="material-icons text-slate-700 dark:text-slate-300">chevron_left</span>
-</button>
-<button class="pointer-events-auto bg-white/50 dark:bg-slate-900/50 hover:bg-white dark:hover:bg-slate-900 backdrop-blur-sm p-2 rounded-full transition">
-<span class="material-icons text-slate-700 dark:text-slate-300">chevron_right</span>
-</button>
-</div>
-</div>
-<div class="flex justify-center mt-2 space-x-2">
-<button class="w-2 h-2 rounded-full bg-primary"></button>
-<button class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary/70 dark:hover:bg-primary/70 transition"></button>
-<button class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary/70 dark:hover:bg-primary/70 transition"></button>
-<button class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary/70 dark:hover:bg-primary/70 transition"></button>
-<button class="w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 hover:bg-primary/70 dark:hover:bg-primary/70 transition"></button>
-</div>
-</div>
-</div>
-</main>
-</div>
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Odoo · Portfolio</title>
+  <meta name="description" content="Odoo portfolio · modules · integrations · migrations" />
 
-</body></html>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Odoo brand palette */
+    body.odoo-theme{
+      --c1:#875A7B;
+      --c2:#B87AAE;
+      --c3:#F2E6F1;
+    }
+    .odoo-pill{
+      background: rgba(135,90,123,.14);
+      border: 1px solid rgba(135,90,123,.28);
+      color: rgba(234,240,255,.90);
+      border-radius: 999px;
+      padding: .4rem .75rem;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+    .odoo-link{
+      color: rgba(234,240,255,.9);
+      text-decoration: none;
+    }
+    .odoo-link:hover{ text-decoration: underline; }
+  </style>
+</head>
+
+<body class="odoo-theme">
+  <div class="noise"></div>
+
+  <!-- TOPBAR -->
+  <nav class="navbar topbar sticky-top">
+    <div class="container py-2">
+      <a class="btn btn-outline-glow btn-sm" href="index.html#odoo">
+        <i class="bi bi-arrow-left me-1"></i> <span data-i18n="odooPage.back">Back</span>
+      </a>
+
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <button class="flag-btn" type="button" data-lang="en" aria-label="English" title="English">🇬🇧</button>
+        <button class="flag-btn" type="button" data-lang="es" aria-label="Español" title="Español">🇪🇸</button>
+        <button class="flag-btn" type="button" data-lang="pt" aria-label="Português" title="Português">🇧🇷</button>
+        <button class="flag-btn" type="button" data-lang="fr" aria-label="Français" title="Français">🇫🇷</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header>
+    <section class="pt-5">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+          <div class="col-12 col-lg-8">
+            <div class="reveal">
+              <div class="kicker mb-2">ERP</div>
+              <h1 class="display-5 fw-black display-tight mb-3" data-i18n="odooPage.title">Odoo Portfolio</h1>
+              <p class="lead mb-4" data-i18n="odooPage.subtitle">
+                Selected Odoo work: custom addons, migrations and integrations for real business workflows.
+              </p>
+
+              <div class="d-flex flex-wrap gap-2">
+                <span class="odoo-pill">Odoo 14</span>
+                <span class="odoo-pill">Odoo 15</span>
+                <span class="odoo-pill" data-i18n="odooPage.stack">Python · PostgreSQL · XML · QWeb</span>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 mt-4">
+                <a class="btn btn-odoo px-4" href="https://github.com/LucPinheiro/ModulosOdoo" target="_blank" rel="noreferrer">
+                  <i class="bi bi-github me-1"></i> <span data-i18n="odooPage.repo">View repo</span>
+                </a>
+                <a class="btn btn-outline-glow px-4" href="https://www.odoo.com/es_ES" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> <span data-i18n="odooPage.odooSite">Odoo website</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <div class="glow-card reveal">
+              <div class="glow-inner">
+                <div class="fw-bold mb-2" data-i18n="odooPage.what">What I do with Odoo</div>
+                <ul class="text-muted-2 mb-0">
+                  <li data-i18n="odooPage.f1">Install & configure Community/Enterprise environments (virtualenv, dependencies).</li>
+                  <li data-i18n="odooPage.f2">Version migrations and upgrades.</li>
+                  <li data-i18n="odooPage.f3">Database design + import/export tools.</li>
+                  <li data-i18n="odooPage.f4">Custom modules: models, views, wizards, security, reports.</li>
+                  <li data-i18n="odooPage.f5">SEO / web optimisation + documentation (README) and Git workflow.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <!-- MODULES -->
+  <section>
+    <div class="container">
+      <div class="reveal mb-3">
+        <div class="kicker mb-2" data-i18n="odooPage.modulesKicker">Addons</div>
+        <h2 class="h2 fw-bold mb-1" data-i18n="odooPage.modulesTitle">Selected modules</h2>
+        <p class="text-muted-2 mb-0" data-i18n="odooPage.modulesSub">
+          A snapshot of real addons built/customized across Purchasing, Inventory, MRP, Accounting, Sales and HR.
+        </p>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="glow-card h-100 reveal">
+            <div class="glow-inner">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="fw-bold">Customers Product Code Inherit</div>
+                <span class="odoo-pill">Odoo 14</span>
+              </div>
+              <div class="small text-muted-2 mt-2" data-i18n="odooPage.m1">
+                Adds QR reading wizard to capture purchase order data for fishing documents.
+              </div>
+              <div class="mt-3">
+                <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-purchase/tree/14.0/fcd_purchase_order" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="glow-card h-100 reveal">
+            <div class="glow-inner">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="fw-bold">FCD (Fishing Capture Document)</div>
+                <span class="odoo-pill">Odoo 14</span>
+              </div>
+              <div class="small text-muted-2 mt-2" data-i18n="odooPage.m2">
+                New inventory models + zones/subzones, vessels and quality control linked to scanned lots.
+              </div>
+              <div class="mt-3">
+                <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-stock/tree/14.0/fcd" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="glow-card h-100 reveal">
+            <div class="glow-inner">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="fw-bold">FCD Weight Scale (MRP)</div>
+                <span class="odoo-pill">Odoo 14</span>
+              </div>
+              <div class="small text-muted-2 mt-2" data-i18n="odooPage.m3">
+                Weight scale checkpoint for packaging lots, including company context and confirmation flow.
+              </div>
+              <div class="mt-3">
+                <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-manufacture/tree/14.0" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="glow-card h-100 reveal">
+            <div class="glow-inner">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="fw-bold">Invoice User Authorization Payment</div>
+                <span class="odoo-pill">Odoo 14</span>
+              </div>
+              <div class="small text-muted-2 mt-2" data-i18n="odooPage.m4">
+                Accounting restrictions: store/display payment authorizer and add security groups & filters.
+              </div>
+              <div class="mt-3">
+                <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-account/tree/14.0-add-account_invoice_user_authorization_payment/account_invoice_user_authorization_payment" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="glow-card h-100 reveal">
+            <div class="glow-inner">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="fw-bold">Sale Order Expected Date</div>
+                <span class="odoo-pill">Odoo 14</span>
+              </div>
+              <div class="small text-muted-2 mt-2" data-i18n="odooPage.m5">
+                Computes expected delivery date from quotation/order and shows it in forms and reports.
+              </div>
+              <div class="mt-3">
+                <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-sale/tree/14.0-add-sale_order_expected_date/sale_order_expected_date" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="glow-card h-100 reveal">
+            <div class="glow-inner">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="fw-bold">Web Footer GDPR Report</div>
+                <span class="odoo-pill">Odoo 15</span>
+              </div>
+              <div class="small text-muted-2 mt-2" data-i18n="odooPage.m6">
+                Adds GDPR clauses to sales order & invoice PDF reports via settings.
+              </div>
+              <div class="mt-3">
+                <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-sale/tree/15.0-add-web_footer_gdpr_report/web_footer_gdpr_report" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="glow-card h-100 reveal">
+            <div class="glow-inner">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="fw-bold">Invoice Qty Number in Sale Order</div>
+                <span class="odoo-pill">Odoo 15</span>
+              </div>
+              <div class="small text-muted-2 mt-2" data-i18n="odooPage.m7">
+                Counts number of invoices per sales order and adds filters in search view.
+              </div>
+              <div class="mt-3">
+                <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-sale/tree/15.0-add-sale_order_invoice_qty_number/sale_order_invoice_qty_number" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="glow-card h-100 reveal">
+            <div class="glow-inner">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="fw-bold">HR Attendance Menu Filter</div>
+                <span class="odoo-pill">Odoo 15</span>
+              </div>
+              <div class="small text-muted-2 mt-2" data-i18n="odooPage.m8">
+                Default “This week” filter and quick filters (today/yesterday/this week/last week) across views.
+              </div>
+              <div class="mt-3">
+                <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-hr/tree/15.0/hr_attendance_menu_filter" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="glow-card h-100 reveal">
+            <div class="glow-inner">
+              <div class="d-flex justify-content-between align-items-start">
+                <div class="fw-bold">HR Attendance User Edit Check In/Out</div>
+                <span class="odoo-pill">Odoo 15</span>
+              </div>
+              <div class="small text-muted-2 mt-2" data-i18n="odooPage.m9">
+                Allows attendance users to edit their own check‑in/check‑out entries afterwards.
+              </div>
+              <div class="mt-3">
+                <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-hr/tree/15.0/hr_attendance_user_edit_check_in_out" target="_blank" rel="noreferrer">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="glow-card reveal mt-4">
+        <div class="glow-inner d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <div class="text-muted-2" data-i18n="odooPage.cta">
+            Want the full list of Odoo work and code? Visit the GitHub repository.
+          </div>
+          <a class="btn btn-odoo px-4" href="https://github.com/LucPinheiro/ModulosOdoo" target="_blank" rel="noreferrer">
+            <i class="bi bi-github me-1"></i> <span data-i18n="odooPage.openRepo">Open ModulosOdoo</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="py-4">
+    <div class="container text-center small text-muted-2">
+      © <span id="year"></span> Luciana Pinheiro
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // scroll reveal
+    const io = new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show");}),{threshold:0.12});
+    document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+  </script>
+
+  <script>
+    // Minimal i18n just for this page
+    const T = {
+      en:{
+        "odooPage.back":"Back",
+        "odooPage.title":"Odoo Portfolio",
+        "odooPage.subtitle":"Selected Odoo work: custom addons, migrations and integrations for real business workflows.",
+        "odooPage.stack":"Python · PostgreSQL · XML · QWeb",
+        "odooPage.repo":"View repo",
+        "odooPage.odooSite":"Odoo website",
+        "odooPage.what":"What I do with Odoo",
+        "odooPage.f1":"Install & configure Community/Enterprise environments (virtualenv, dependencies).",
+        "odooPage.f2":"Version migrations and upgrades.",
+        "odooPage.f3":"Database design + import/export tools.",
+        "odooPage.f4":"Custom modules: models, views, wizards, security, reports.",
+        "odooPage.f5":"SEO / web optimisation + documentation (README) and Git workflow.",
+        "odooPage.modulesKicker":"Addons",
+        "odooPage.modulesTitle":"Selected modules",
+        "odooPage.modulesSub":"A snapshot of real addons built/customized across Purchasing, Inventory, MRP, Accounting, Sales and HR.",
+        "odooPage.m1":"Adds QR reading wizard to capture purchase order data for fishing documents.",
+        "odooPage.m2":"New inventory models + zones/subzones, vessels and quality control linked to scanned lots.",
+        "odooPage.m3":"Weight scale checkpoint for packaging lots, including company context and confirmation flow.",
+        "odooPage.m4":"Accounting restrictions: store/display payment authorizer and add security groups & filters.",
+        "odooPage.m5":"Computes expected delivery date from quotation/order and shows it in forms and reports.",
+        "odooPage.m6":"Adds GDPR clauses to sales order & invoice PDF reports via settings.",
+        "odooPage.m7":"Counts number of invoices per sales order and adds filters in search view.",
+        "odooPage.m8":"Default “This week” filter and quick filters (today/yesterday/this week/last week) across views.",
+        "odooPage.m9":"Allows attendance users to edit their own check‑in/check‑out entries afterwards.",
+        "odooPage.cta":"Want the full list of Odoo work and code? Visit the GitHub repository.",
+        "odooPage.openRepo":"Open ModulosOdoo"
+      },
+      es:{
+        "odooPage.back":"Volver",
+        "odooPage.title":"Portfolio Odoo",
+        "odooPage.subtitle":"Trabajos Odoo seleccionados: addons a medida, migraciones e integraciones para flujos reales de negocio.",
+        "odooPage.stack":"Python · PostgreSQL · XML · QWeb",
+        "odooPage.repo":"Ver repo",
+        "odooPage.odooSite":"Web de Odoo",
+        "odooPage.what":"Qué hago con Odoo",
+        "odooPage.f1":"Instalación y configuración (virtualenv, dependencias) en Community/Enterprise.",
+        "odooPage.f2":"Migraciones y upgrades entre versiones.",
+        "odooPage.f3":"Diseño de base de datos + importación/exportación.",
+        "odooPage.f4":"Módulos a medida: modelos, vistas, asistentes, seguridad, reportes.",
+        "odooPage.f5":"SEO/optimización web + documentación (README) y flujo Git.",
+        "odooPage.modulesKicker":"Addons",
+        "odooPage.modulesTitle":"Módulos destacados",
+        "odooPage.modulesSub":"Muestra de addons reales en Compras, Inventario, MRP, Contabilidad, Ventas y RRHH.",
+        "odooPage.m1":"Asistente de lectura QR para capturar datos del pedido de compra (documento de pesca).",
+        "odooPage.m2":"Nuevos modelos de inventario + zonas/subzonas, buques y control de calidad ligado a lotes escaneados.",
+        "odooPage.m3":"Punto de control de báscula para empaquetado, con compañía y flujo de confirmación.",
+        "odooPage.m4":"Restricciones contables: usuario autorizador de pago + grupos y filtros de seguridad.",
+        "odooPage.m5":"Calcula fecha estimada desde presupuesto/pedido y la muestra en formularios e informes.",
+        "odooPage.m6":"Añade cláusulas GDPR en PDFs de pedidos y facturas mediante ajustes.",
+        "odooPage.m7":"Cuenta el número de facturas por pedido y añade filtros en la búsqueda.",
+        "odooPage.m8":"Filtro por defecto “Esta semana” y filtros rápidos (hoy/ayer/esta semana/semana pasada).",
+        "odooPage.m9":"Permite editar posteriormente la entrada/salida de la propia asistencia.",
+        "odooPage.cta":"¿Quieres la lista completa y el código? Visita el repositorio en GitHub.",
+        "odooPage.openRepo":"Abrir ModulosOdoo"
+      },
+      pt:{
+        "odooPage.back":"Voltar",
+        "odooPage.title":"Portfólio Odoo",
+        "odooPage.subtitle":"Trabalhos Odoo selecionados: addons sob medida, migrações e integrações para fluxos reais de negócio.",
+        "odooPage.stack":"Python · PostgreSQL · XML · QWeb",
+        "odooPage.repo":"Ver repo",
+        "odooPage.odooSite":"Site do Odoo",
+        "odooPage.what":"O que faço com Odoo",
+        "odooPage.f1":"Instalação e configuração (virtualenv, dependências) em Community/Enterprise.",
+        "odooPage.f2":"Migrações e upgrades entre versões.",
+        "odooPage.f3":"Design de base de dados + importação/exportação.",
+        "odooPage.f4":"Módulos sob medida: modelos, views, wizards, segurança, relatórios.",
+        "odooPage.f5":"SEO/otimização web + documentação (README) e fluxo Git.",
+        "odooPage.modulesKicker":"Addons",
+        "odooPage.modulesTitle":"Módulos em destaque",
+        "odooPage.modulesSub":"Amostra de addons reais em Compras, Inventário, MRP, Contabilidade, Vendas e RH.",
+        "odooPage.m1":"Wizard de leitura QR para capturar dados do pedido de compra (documento de pesca).",
+        "odooPage.m2":"Novos modelos de inventário + zonas/subzonas, embarcações e controle de qualidade ligado a lotes escaneados.",
+        "odooPage.m3":"Checkpoint de balança para empacotamento, com contexto de empresa e confirmação.",
+        "odooPage.m4":"Restrições contábeis: usuário autorizador de pagamento + grupos e filtros de segurança.",
+        "odooPage.m5":"Calcula data prevista e exibe em formulários e relatórios.",
+        "odooPage.m6":"Inclui cláusulas GDPR em PDFs de pedidos e faturas via configurações.",
+        "odooPage.m7":"Conta o número de faturas por pedido e adiciona filtros na busca.",
+        "odooPage.m8":"Filtro padrão “Esta semana” e filtros rápidos (hoje/ontem/esta semana/semana passada).",
+        "odooPage.m9":"Permite editar depois check‑in/check‑out da própria presença.",
+        "odooPage.cta":"Quer a lista completa e o código? Visite o repositório no GitHub.",
+        "odooPage.openRepo":"Abrir ModulosOdoo"
+      },
+      fr:{
+        "odooPage.back":"Retour",
+        "odooPage.title":"Portfolio Odoo",
+        "odooPage.subtitle":"Travaux Odoo sélectionnés : addons sur mesure, migrations et intégrations pour des workflows réels.",
+        "odooPage.stack":"Python · PostgreSQL · XML · QWeb",
+        "odooPage.repo":"Voir le repo",
+        "odooPage.odooSite":"Site Odoo",
+        "odooPage.what":"Ce que je fais avec Odoo",
+        "odooPage.f1":"Installation et configuration (virtualenv, dépendances) Community/Enterprise.",
+        "odooPage.f2":"Migrations et upgrades de versions.",
+        "odooPage.f3":"Conception BD + import/export.",
+        "odooPage.f4":"Modules sur mesure : modèles, vues, wizards, sécurité, rapports.",
+        "odooPage.f5":"SEO/optimisation web + documentation (README) et workflow Git.",
+        "odooPage.modulesKicker":"Addons",
+        "odooPage.modulesTitle":"Modules sélectionnés",
+        "odooPage.modulesSub":"Aperçu d’addons réels sur Achats, Stock, MRP, Comptabilité, Ventes et RH.",
+        "odooPage.m1":"Wizard de lecture QR pour capturer les données d’achat (document de pêche).",
+        "odooPage.m2":"Nouveaux modèles stock + zones/sous‑zones, navires et contrôle qualité liés aux lots scannés.",
+        "odooPage.m3":"Checkpoint balance pour le packaging, avec contexte société et confirmation.",
+        "odooPage.m4":"Restrictions comptables : utilisateur autorisant le paiement + groupes et filtres.",
+        "odooPage.m5":"Calcule la date estimée et l’affiche dans formulaires et rapports.",
+        "odooPage.m6":"Ajoute des clauses GDPR aux PDFs commandes/factures via paramètres.",
+        "odooPage.m7":"Compte le nombre de factures par commande et ajoute des filtres.",
+        "odooPage.m8":"Filtre par défaut “Cette semaine” et filtres rapides (aujourd’hui/hier/cette semaine/semaine dernière).",
+        "odooPage.m9":"Permet d’éditer ensuite ses propres pointages (entrée/sortie).",
+        "odooPage.cta":"Vous voulez la liste complète et le code ? Visitez le dépôt GitHub.",
+        "odooPage.openRepo":"Ouvrir ModulosOdoo"
+      }
+    };
+
+    const DEFAULT_LANG = "en";
+    const getLang = () => localStorage.getItem("lang") || DEFAULT_LANG;
+
+    function applyLang(lang){
+      document.documentElement.lang = lang;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const k = el.getAttribute("data-i18n");
+        const v = (T[lang] && T[lang][k]) || (T[DEFAULT_LANG] && T[DEFAULT_LANG][k]);
+        if (v) el.textContent = v;
+      });
+      document.querySelectorAll(".flag-btn").forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+    }
+
+    document.querySelectorAll(".flag-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        localStorage.setItem("lang", btn.dataset.lang);
+        applyLang(btn.dataset.lang);
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    applyLang(getLang());
+  </script>
+</body>
+</html>
