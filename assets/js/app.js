@@ -212,6 +212,70 @@ const I18N = {
   }
 };
 
+
+const translations = {
+  en: {
+    edu: {
+      kicker: "Education & Training",
+      title: "Education & Training",
+      items: [
+        { year: "2025–2026", title: "Specialization Course in Python App Development", meta: "Instituto de Teis, Vigo · 430 hours" },
+        { year: "2019–2022", title: "Higher Technician in Multiplatform Application Development (DAM)", meta: "Instituto de Teis, Vigo · 2000 hours" },
+        { year: "2021", title: "Full-Stack Developer", meta: "Hack a Boss Academy · 400 hours" },
+        { year: "2006–2010", title: "BSc in Biological Sciences", meta: "Universidade Estadual do Maranhão (UEMA), São Luís, Brazil" },
+        { year: "2005–2009", title: "Professional Technician in Piano", meta: "Escola de Música Lilah Lisboa de Araújo, Maranhão, Brazil" },
+        { year: "2001–2004", title: "Primary Education Teaching Technician", meta: "Escola Politécnica de Vargem Grande, Brazil" }
+      ]
+    }
+  },
+
+  es: {
+    edu: {
+      kicker: "Educación y Formación",
+      title: "Educación y Formación",
+      items: [
+        { year: "2025–2026", title: "Curso de especialización en Desarrollo de Aplicaciones en Python", meta: "Instituto de Teis, Vigo · 430 horas" },
+        { year: "2019–2022", title: "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)", meta: "Instituto de Teis, Vigo · 2000 horas" },
+        { year: "2021", title: "Programadora Full Stack", meta: "Academia Hack a Boss · 400 horas" },
+        { year: "2006–2010", title: "Licenciatura en Ciencias Biológicas", meta: "Universidade Estadual do Maranhão (UEMA), São Luís, Brasil" },
+        { year: "2005–2009", title: "Técnico profesional en Piano", meta: "Escuela de Música Lilah Lisboa de Araújo, Maranhão, Brasil" },
+        { year: "2001–2004", title: "Técnico de Magisterio en Enseñanza Primaria", meta: "Escuela Politécnica de Vargem Grande, Brasil" }
+      ]
+    }
+  },
+
+  pt: {
+    edu: {
+      kicker: "Educação e Formação",
+      title: "Educação e Formação",
+      items: [
+        { year: "2025–2026", title: "Curso de especialização em Desenvolvimento de Aplicações em Python", meta: "Instituto de Teis, Vigo · 430 horas" },
+        { year: "2019–2022", title: "Técnico Superior em Desenvolvimento de Aplicações Multiplataforma (DAM)", meta: "Instituto de Teis, Vigo · 2000 horas" },
+        { year: "2021", title: "Desenvolvedora Full Stack", meta: "Academia Hack a Boss · 400 horas" },
+        { year: "2006–2010", title: "Licenciatura em Ciências Biológicas", meta: "Universidade Estadual do Maranhão (UEMA), São Luís, Brasil" },
+        { year: "2005–2009", title: "Técnico profissional em Piano", meta: "Escola de Música Lilah Lisboa de Araújo, Maranhão, Brasil" },
+        { year: "2001–2004", title: "Técnico em Magistério (Ensino Primário)", meta: "Escola Politécnica de Vargem Grande, Brasil" }
+      ]
+    }
+  },
+
+  fr: {
+    edu: {
+      kicker: "Formation",
+      title: "Formation",
+      items: [
+        { year: "2025–2026", title: "Cours de spécialisation en Développement d’applications Python", meta: "Instituto de Teis, Vigo · 430 heures" },
+        { year: "2019–2022", title: "Technicien Supérieur en Développement d’Applications Multiplateformes (DAM)", meta: "Instituto de Teis, Vigo · 2000 heures" },
+        { year: "2021", title: "Développeuse Full Stack", meta: "Hack a Boss Academy · 400 heures" },
+        { year: "2006–2010", title: "Licence en Sciences Biologiques", meta: "Universidade Estadual do Maranhão (UEMA), São Luís, Brésil" },
+        { year: "2005–2009", title: "Technicienne professionnelle en Piano", meta: "Escola de Música Lilah Lisboa de Araújo, Maranhão, Brésil" },
+        { year: "2001–2004", title: "Technicienne en Enseignement Primaire", meta: "Escola Politécnica de Vargem Grande, Brésil" }
+      ]
+    }
+  }
+};
+
+
 const DEFAULT_LANG = "en";
 
 function applyI18n(lang){
