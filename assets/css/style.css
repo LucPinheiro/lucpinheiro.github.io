@@ -453,3 +453,7 @@ footer{
 }
 .dropdown-item{ white-space: nowrap; }
 
+
+/* SAFETY: que la web no quede en blanco si falla JS */
+.reveal { opacity: 1 !important; transform: none !important; }
+
