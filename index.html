@@ -33,7 +33,9 @@
           <li class="nav-item"><a class="nav-link" href="#odoo" data-i18n="nav.odoo">Odoo</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
          <li class="nav-item"><a class="nav-link" href="#tech" data-i18n="nav.tech">Technologies</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ai" data-i18n="nav.ai">AI Automation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#design_market" data-i18n="nav.design_market">Design & Marketing</a></li>
+          
           <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav.experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
@@ -251,15 +253,15 @@
     </div>
   </section>
 
-  <!-- TECH -->
+<!-- TECH (Programming stack) -->
 <section id="tech" class="section">
   <div class="container">
     <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3 reveal">
       <div>
-        <div class="kicker mb-2" data-i18n="tech.kicker">Technologies</div>
-        <h2 class="h2 fw-bold mb-1" data-i18n="tech.title">Skills & Tools</h2>
+        <div class="kicker mb-2" data-i18n="tech.kicker">TECHNOLOGIES</div>
+        <h2 class="h2 fw-bold mb-1" data-i18n="tech.title">Programming stack</h2>
         <p class="text-muted-2 mb-0" data-i18n="tech.subtitle">
-          Practical stack built from real projects and professional experience.
+          Languages, frameworks, databases and dev tools used in real projects.
         </p>
       </div>
 
@@ -270,41 +272,44 @@
     </div>
 
     <div class="row g-3">
-      <!-- LEFT: Knowledge acquired -->
       <div class="col-12 col-lg-6">
         <div class="glow-card reveal">
           <div class="glow-inner">
-            <h3 class="h5 fw-bold mb-3" data-i18n="tech.leftTitle">Knowledge acquired</h3>
+            <h3 class="h5 fw-bold mb-3" data-i18n="tech.block1">Core development</h3>
 
             <div class="row g-3">
               <div class="col-12 col-md-6">
                 <div class="mini-card">
-                  <div class="fw-semibold" data-i18n="tech.dataBi.title">Data / BI</div>
-                  <div class="small text-muted-2" data-i18n="tech.dataBi.items">Power BI · Python · R · MatLab</div>
+                  <div class="fw-semibold" data-i18n="tech.front.title">Frontend</div>
+                  <div class="small text-muted-2" data-i18n="tech.front.items">
+                    HTML5 · CSS3 · Bootstrap 5 · React
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="mini-card">
+                  <div class="fw-semibold" data-i18n="tech.back.title">Backend</div>
+                  <div class="small text-muted-2" data-i18n="tech.back.items">
+                    Python · Java · JavaScript
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="mini-card">
+                  <div class="fw-semibold" data-i18n="tech.db.title">Databases</div>
+                  <div class="small text-muted-2" data-i18n="tech.db.items">
+                    PostgreSQL · MySQL
+                  </div>
                 </div>
               </div>
 
               <div class="col-12 col-md-6">
                 <div class="mini-card">
                   <div class="fw-semibold" data-i18n="tech.cloud.title">Cloud</div>
-                  <div class="small text-muted-2" data-i18n="tech.cloud.items">AWS · Azure · Google Cloud</div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="mini-card">
-                  <div class="fw-semibold" data-i18n="tech.frontend.title">Frontend</div>
-                  <div class="small text-muted-2" data-i18n="tech.frontend.items">
-                    HTML5/CSS3 · Bootstrap 5 · WordPress · WooCommerce · PrestaShop · Moodle
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="mini-card">
-                  <div class="fw-semibold" data-i18n="tech.backend.title">Backend & DB</div>
-                  <div class="small text-muted-2" data-i18n="tech.backend.items">
-                    Java · JavaScript · Python · MySQL · PostgreSQL · React
+                  <div class="small text-muted-2" data-i18n="tech.cloud.items">
+                    AWS · Azure · Google Cloud
                   </div>
                 </div>
               </div>
@@ -313,210 +318,224 @@
                 <div class="mini-card">
                   <div class="fw-semibold" data-i18n="tech.tools.title">Dev tools</div>
                   <div class="small text-muted-2" data-i18n="tech.tools.items">
-                    VS Code · IntelliJ · Eclipse · NetBeans · Postman · PyCharm · Git · DBeaver · PhpMyAdmin · Xampp
+                    Git · Postman · VS Code · IntelliJ · Eclipse · NetBeans · PyCharm · DBeaver · PhpMyAdmin · XAMPP
                   </div>
                 </div>
               </div>
 
               <div class="col-12">
                 <div class="mini-card">
-                  <div class="fw-semibold" data-i18n="tech.erp.title">ERP</div>
-                  <div class="small text-muted-2" data-i18n="tech.erp.items">Odoo Community · Odoo Enterprise</div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="mini-card">
-                  <div class="fw-semibold" data-i18n="tech.agile.title">Agile & soft skills</div>
-                  <div class="small text-muted-2" data-i18n="tech.agile.items">
-                    Scrum · Kanban · Trello · Slack · Teamwork · Problem solving · Self-learning
+                  <div class="fw-semibold" data-i18n="tech.platforms.title">Web platforms</div>
+                  <div class="small text-muted-2" data-i18n="tech.platforms.items">
+                    WordPress · WooCommerce · PrestaShop · Moodle
                   </div>
                 </div>
               </div>
+
             </div>
-
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: AI + Design -->
       <div class="col-12 col-lg-6">
         <div class="glow-card reveal">
           <div class="glow-inner">
-            <h3 class="h5 fw-bold mb-3" data-i18n="tech.rightTitle">AI Automation & Design</h3>
+            <h3 class="h5 fw-bold mb-3" data-i18n="tech.block2">Examples</h3>
 
             <div class="mini-card mb-3">
-              <div class="fw-semibold" data-i18n="tech.ai.title">Generative AI & Business Automation</div>
-              <ul class="mb-0 text-muted-2 mt-2">
-                <li data-i18n="tech.ai.1">ChatGPT / Copilot / Gemini / Claude — writing, reports, support.</li>
-                <li data-i18n="tech.ai.2">Power Automate / Make / Zapier — automations + integrations (Odoo/CRM).</li>
-                <li data-i18n="tech.ai.3">Notion AI / ClickUp Brain / Airtable AI — smart project management.</li>
-                <li data-i18n="tech.ai.4">OCR — automated extraction of data.</li>
-                <li data-i18n="tech.ai.5">DALL·E / Midjourney / Leonardo.ai — visuals & creatives.</li>
-                <li data-i18n="tech.ai.6">Runway / Pika Labs / Synthesia — explainer videos.</li>
-              </ul>
+              <div class="fw-semibold" data-i18n="tech.examplesTitle">Projects that prove the stack</div>
+              <div class="small text-muted-2" data-i18n="tech.examplesDesc">
+                Each page includes examples, repo links and a short explanation of what was built.
+              </div>
             </div>
 
-            <div class="mini-card">
-              <div class="fw-semibold mb-2" data-i18n="tech.design.title">Graphic Design & Marketing</div>
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="tech.design.webui.title">Web / UI</div>
-                    <div class="small text-muted-2" data-i18n="tech.design.webui.items">
-                      Figma · Draw.io · Ant Design · Responsive layout
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="tech.design.adobe.title">Adobe Suite</div>
-                    <div class="small text-muted-2" data-i18n="tech.design.adobe.items">
-                      Photoshop · Illustrator · InDesign
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="d-grid gap-2">
+              <a class="btn btn-outline-glow" href="odoo.html">
+                <i class="bi bi-box-seam me-1"></i> <span data-i18n="tech.linkOdoo">Odoo portfolio</span>
+              </a>
+              <a class="btn btn-outline-glow" href="https://github.com/LucPinheiro/librerias_pandas_numpy_python" target="_blank" rel="noreferrer">
+                <i class="bi bi-github me-1"></i> <span data-i18n="tech.linkData">Data (Pandas/NumPy) repo</span>
+              </a>
+              <a class="btn btn-outline-glow" href="https://github.com/LucPinheiro/OjeadorDeportivo_React" target="_blank" rel="noreferrer">
+                <i class="bi bi-github me-1"></i> <span data-i18n="tech.linkReact">React project repo</span>
+              </a>
+              <a class="btn btn-outline-glow" href="https://github.com/LucPinheiro/SistemaControlVacuna_Java" target="_blank" rel="noreferrer">
+                <i class="bi bi-github me-1"></i> <span data-i18n="tech.linkJava">Java project repo</span>
+              </a>
+            </div>
 
-              <div class="d-flex flex-wrap gap-2 mt-3">
-                <a class="btn btn-outline-glow" href="tech.html">
-                  <span data-i18n="tech.cta2">See full tech stack</span>
-                  <i class="bi bi-arrow-right ms-1"></i>
-                </a>
-                <a class="btn btn-outline-glow" href="#projects">
-                  <span data-i18n="tech.cta3">See projects</span>
-                  <i class="bi bi-grid ms-1"></i>
-                </a>
-              </div>
-
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <a class="btn btn-outline-glow" href="tech.html">
+                <span data-i18n="tech.cta2">See full tech page</span> <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+              <a class="btn btn-outline-glow" href="#projects">
+                <span data-i18n="tech.cta3">Go to projects</span> <i class="bi bi-grid ms-1"></i>
+              </a>
             </div>
 
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <div class="reveal mb-3">
-        <div class="kicker mb-2" data-i18n="skills.kicker">Skills</div>
-        <h2 class="h2 fw-bold mb-1" data-i18n="skills.title">Knowledge & tools</h2>
-        <p class="text-muted-2 mb-0" data-i18n="skills.subtitle">A practical stack built from real projects and professional experience.</p>
+  <!-- AI -->
+<section id="ai" class="section">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3 reveal">
+      <div>
+        <div class="kicker mb-2" data-i18n="ai.kicker">AI</div>
+        <h2 class="h2 fw-bold mb-1" data-i18n="ai.title">AI Automation</h2>
+        <p class="text-muted-2 mb-0" data-i18n="ai.subtitle">
+          Generative AI + automation tools to speed up operations, reporting and support.
+        </p>
       </div>
 
-      <div class="row g-3">
-        <div class="col-12 col-lg-6">
-          <div class="glow-card reveal">
-            <div class="glow-inner">
-              <h3 class="h5 fw-bold mb-3" data-i18n="skills.acquired">Knowledge acquired</h3>
+      <a class="btn btn-outline-glow" href="ai.html">
+        <span data-i18n="ai.cta">Open AI page</span>
+        <i class="bi bi-arrow-right ms-1"></i>
+      </a>
+    </div>
 
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="skills.ds">Data / BI</div>
-                    <div class="small text-muted-2">Power BI · Python · R · MatLab</div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="skills.cloud">Cloud</div>
-                    <div class="small text-muted-2">AWS · Azure · Google Cloud</div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="skills.front">Frontend</div>
-                    <div class="small text-muted-2">HTML5/CSS3 · Bootstrap 5 · WordPress · WooCommerce · PrestaShop · Moodle</div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="skills.back">Backend & DB</div>
-                    <div class="small text-muted-2">Java · JavaScript · Python · MySQL · PostgreSQL · React</div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="skills.tools">Dev tools</div>
-                    <div class="small text-muted-2">VS Code · IntelliJ · Eclipse · NetBeans · Postman · PyCharm · Git · DBeaver · PhpMyAdmin · Xampp</div>
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="skills.odoo">ERP</div>
-                    <div class="small text-muted-2">Odoo Community · Odoo Enterprise</div>
-                  </div>
-                </div>
-
-                <div class="col-12">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="skills.agile">Agile & soft skills</div>
-                    <div class="small text-muted-2">Scrum · Kanban · Trello · Slack · Teamwork · Problem solving · Self‑learning</div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+    <div class="glow-card reveal">
+      <div class="glow-inner">
+        <div class="row g-3">
+          <div class="col-12 col-lg-7">
+            <ul class="mb-0 text-muted-2">
+              <li data-i18n="ai.1">ChatGPT / Copilot / Gemini / Claude — writing, reports, customer support and technical help.</li>
+              <li data-i18n="ai.2">Power Automate / Make / Zapier — admin & logistics automation; integrations (Odoo, CRM, communication).</li>
+              <li data-i18n="ai.3">Notion AI / ClickUp Brain / Airtable AI — smarter task & project management.</li>
+              <li data-i18n="ai.4">OCR — digitization and automated data extraction.</li>
+              <li data-i18n="ai.5">DALL·E / Midjourney / Leonardo.ai — visual assets and marketing creatives.</li>
+              <li data-i18n="ai.6">Runway / Pika Labs / Synthesia — explainer videos and presentations.</li>
+              <li data-i18n="ai.7">ChatGPT Code Interpreter / GitHub Copilot — developer assistance.</li>
+              <li data-i18n="ai.8">AI tools for logistics — route optimization, demand forecasting and analytics.</li>
+            </ul>
           </div>
-        </div>
 
-        <div class="col-12 col-lg-6">
-          <div class="glow-card reveal">
-            <div class="glow-inner">
-              <h3 class="h5 fw-bold mb-3" data-i18n="skills.aiTitle">Generative AI & Business Automation</h3>
+          <div class="col-12 col-lg-5">
+            <div class="mini-card h-100">
+              <div class="fw-semibold mb-2" data-i18n="ai.usecasesTitle">Example use cases</div>
               <ul class="mb-0 text-muted-2">
-                <li data-i18n="ai.1">ChatGPT / Copilot / Gemini / Claude — writing, reports, customer support and technical help.</li>
-                <li data-i18n="ai.2">Power Automate / Make / Zapier — admin & logistics automation; integrations (Odoo, CRM, communication).</li>
-                <li data-i18n="ai.3">Notion AI / ClickUp Brain / Airtable AI — smarter task & project management.</li>
-                <li data-i18n="ai.4">OCR — digitization and automated data extraction.</li>
-                <li data-i18n="ai.5">DALL·E / Midjourney / Leonardo.ai — visual assets and marketing creatives.</li>
-                <li data-i18n="ai.6">Runway / Pika Labs / Synthesia — explainer videos and presentations.</li>
-                <li data-i18n="ai.7">ChatGPT Code Interpreter / GitHub Copilot — developer assistance.</li>
-                <li data-i18n="ai.8">AI tools for logistics — route optimization, demand forecasting and analytics.</li>
+                <li data-i18n="ai.uc1">Automated customer replies + knowledge base drafts.</li>
+                <li data-i18n="ai.uc2">Odoo/CRM task creation from emails/forms.</li>
+                <li data-i18n="ai.uc3">Weekly KPI reports and dashboards summaries.</li>
+                <li data-i18n="ai.uc4">Document OCR → structured data → Odoo import.</li>
               </ul>
 
-              <hr class="my-4" style="border-color: rgba(255,255,255,.10)">
+              <a class="btn btn-outline-glow mt-3" href="ai.html">
+                <span data-i18n="ai.cta2">See AI workflows</span> <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-              <h3 class="h5 fw-bold mb-3" data-i18n="skills.designTitle">Graphic Design & Marketing</h3>
-              <div class="row g-3">
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="design.web">Web / UI</div>
-                    <div class="small text-muted-2">Figma · Draw.io · Ant Design · Responsive layout</div>
-                  </div>
+  </div>
+</section>
+
+  <!-- DESIGN & MARKETING -->
+<section id="design_market" class="section">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3 reveal">
+      <div>
+        <div class="kicker mb-2" data-i18n="design.kicker">DESIGN</div>
+        <h2 class="h2 fw-bold mb-1" data-i18n="design.title">Design & Marketing</h2>
+        <p class="text-muted-2 mb-0" data-i18n="design.subtitle">
+          UI design, visual identity, marketing assets and motion/video basics.
+        </p>
+      </div>
+
+      <a class="btn btn-outline-glow" href="design.html">
+        <span data-i18n="design.cta">Open design page</span>
+        <i class="bi bi-arrow-right ms-1"></i>
+      </a>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-12 col-lg-6">
+        <div class="glow-card reveal">
+          <div class="glow-inner">
+            <h3 class="h5 fw-bold mb-3" data-i18n="design.block1">Design stack</h3>
+
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <div class="mini-card">
+                  <div class="fw-semibold" data-i18n="design.webui.title">Web / UI</div>
+                  <div class="small text-muted-2" data-i18n="design.webui.items">Figma · Draw.io · Ant Design · Responsive layout</div>
                 </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="design.adobe">Adobe Suite</div>
-                    <div class="small text-muted-2">Photoshop · Illustrator · InDesign</div>
-                  </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="mini-card">
+                  <div class="fw-semibold" data-i18n="design.adobe.title">Adobe Suite</div>
+                  <div class="small text-muted-2" data-i18n="design.adobe.items">Photoshop · Illustrator · InDesign</div>
                 </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="design.video">Video / motion</div>
-                    <div class="small text-muted-2">Premiere · After Effects · Final Cut</div>
-                  </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="mini-card">
+                  <div class="fw-semibold" data-i18n="design.video.title">Video / Motion</div>
+                  <div class="small text-muted-2" data-i18n="design.video.items">Premiere · After Effects · Final Cut</div>
                 </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="design.audio">Audio / music</div>
-                    <div class="small text-muted-2">Cubase · Finale · Dorico</div>
-                  </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="mini-card">
+                  <div class="fw-semibold" data-i18n="design.audio.title">Audio / Music</div>
+                  <div class="small text-muted-2" data-i18n="design.audio.items">Cubase · Finale · Dorico</div>
                 </div>
               </div>
 
             </div>
+
+            <a class="btn btn-outline-glow mt-3" href="design.html">
+              <span data-i18n="design.cta2">See design work</span> <i class="bi bi-arrow-right ms-1"></i>
+            </a>
           </div>
         </div>
+      </div>
 
+      <div class="col-12 col-lg-6">
+        <div class="glow-card reveal">
+          <div class="glow-inner">
+            <h3 class="h5 fw-bold mb-3" data-i18n="design.block2">What I deliver</h3>
+
+            <div class="mini-card mb-3">
+              <div class="fw-semibold" data-i18n="design.deliver1.title">UI & landing pages</div>
+              <div class="small text-muted-2" data-i18n="design.deliver1.desc">Layouts, components, responsive design and visual consistency.</div>
+            </div>
+
+            <div class="mini-card mb-3">
+              <div class="fw-semibold" data-i18n="design.deliver2.title">Marketing assets</div>
+              <div class="small text-muted-2" data-i18n="design.deliver2.desc">Banners, social media posts, presentations and brand visuals.</div>
+            </div>
+
+            <div class="mini-card">
+              <div class="fw-semibold" data-i18n="design.deliver3.title">Video & motion basics</div>
+              <div class="small text-muted-2" data-i18n="design.deliver3.desc">Short edits, simple animations and explainer-style videos.</div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <a class="btn btn-outline-glow" href="design.html">
+                <span data-i18n="design.cta3">Open gallery</span> <i class="bi bi-images ms-1"></i>
+              </a>
+              <a class="btn btn-outline-glow" href="#contact">
+                <span data-i18n="design.cta4">Contact</span> <i class="bi bi-send ms-1"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
 
   <!-- EXPERIENCE -->
   <section id="experience">
