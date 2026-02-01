@@ -500,3 +500,232 @@ applyI18n(getLang());
 
 // render projects
 renderProjects("all");
+
+es: {
+  nav: {
+    tech: "Tecnologías",
+    ai: "Automatización con IA",
+    design_market: "Diseño y Marketing"
+  },
+
+  tech: {
+    kicker: "TECNOLOGÍAS",
+    title: "Stack de programación",
+    subtitle: "Lenguajes, frameworks, bases de datos y herramientas usadas en proyectos reales.",
+    cta: "Abrir página tech",
+    cta2: "Ver página tech completa",
+    cta3: "Ir a proyectos",
+    block1: "Desarrollo principal",
+    block2: "Ejemplos",
+
+    front: { title: "Frontend", items: "HTML5 · CSS3 · Bootstrap 5 · React" },
+    back: { title: "Backend", items: "Python · Java · JavaScript" },
+    db: { title: "Bases de datos", items: "PostgreSQL · MySQL" },
+    cloud: { title: "Cloud", items: "AWS · Azure · Google Cloud" },
+    tools: { title: "Herramientas dev", items: "Git · Postman · VS Code · IntelliJ · Eclipse · NetBeans · PyCharm · DBeaver · PhpMyAdmin · XAMPP" },
+    platforms: { title: "Plataformas web", items: "WordPress · WooCommerce · PrestaShop · Moodle" },
+
+    examplesTitle: "Proyectos que demuestran el stack",
+    examplesDesc: "Cada página incluye ejemplos, enlaces al repo y una explicación breve de lo desarrollado.",
+    linkOdoo: "Portfolio Odoo",
+    linkData: "Repo Data (Pandas/NumPy)",
+    linkReact: "Repo proyecto React",
+    linkJava: "Repo proyecto Java"
+  },
+
+  ai: {
+    kicker: "IA",
+    title: "Automatización con IA",
+    subtitle: "IA generativa + automatización para acelerar operaciones, reporting y soporte.",
+    cta: "Abrir página IA",
+    cta2: "Ver flujos de IA",
+    usecasesTitle: "Casos de uso",
+    uc1: "Respuestas automáticas + borradores de base de conocimiento.",
+    uc2: "Creación de tareas en Odoo/CRM desde emails/formularios.",
+    uc3: "Informes semanales de KPIs y resúmenes de dashboards.",
+    uc4: "OCR de documentos → datos estructurados → importación a Odoo.",
+
+    1: "ChatGPT / Copilot / Gemini / Claude — redacción, informes, atención al cliente y soporte técnico.",
+    2: "Power Automate / Make / Zapier — automatización administrativa y logística; integraciones (Odoo, CRM, comunicación).",
+    3: "Notion AI / ClickUp Brain / Airtable AI — gestión inteligente de tareas y proyectos.",
+    4: "OCR — digitalización y extracción automatizada de datos.",
+    5: "DALL·E / Midjourney / Leonardo.ai — creación de recursos visuales y creatividades.",
+    6: "Runway / Pika Labs / Synthesia — vídeos explicativos y presentaciones.",
+    7: "ChatGPT Code Interpreter / GitHub Copilot — asistencia en desarrollo.",
+    8: "IA para logística — optimización de rutas, predicción de demanda y analítica."
+  },
+
+  design: {
+    kicker: "DISEÑO",
+    title: "Diseño y Marketing",
+    subtitle: "Diseño UI, identidad visual, recursos de marketing y bases de motion/vídeo.",
+    cta: "Abrir página diseño",
+    cta2: "Ver trabajos de diseño",
+    cta3: "Abrir galería",
+    cta4: "Contacto",
+    block1: "Herramientas de diseño",
+    block2: "Qué entrego",
+
+    webui: { title: "Web / UI", items: "Figma · Draw.io · Ant Design · Maquetación responsive" },
+    adobe: { title: "Adobe Suite", items: "Photoshop · Illustrator · InDesign" },
+    video: { title: "Vídeo / Motion", items: "Premiere · After Effects · Final Cut" },
+    audio: { title: "Audio / Música", items: "Cubase · Finale · Dorico" },
+
+    deliver1: { title: "UI & landing pages", desc: "Layouts, componentes, responsive y coherencia visual." },
+    deliver2: { title: "Recursos de marketing", desc: "Banners, posts, presentaciones y recursos de marca." },
+    deliver3: { title: "Bases de vídeo y motion", desc: "Ediciones cortas, animaciones simples y vídeos tipo explainer." }
+  }
+}
+
+pt: {
+  nav: {
+    tech: "Tecnologias",
+    ai: "Automação com IA",
+    design_market: "Design e Marketing"
+  },
+
+  tech: {
+    kicker: "TECNOLOGIAS",
+    title: "Stack de programação",
+    subtitle: "Linguagens, frameworks, bases de dados e ferramentas usadas em projetos reais.",
+    cta: "Abrir página tech",
+    cta2: "Ver página tech completa",
+    cta3: "Ir para projetos",
+    block1: "Desenvolvimento principal",
+    block2: "Exemplos",
+
+    front: { title: "Frontend", items: "HTML5 · CSS3 · Bootstrap 5 · React" },
+    back: { title: "Backend", items: "Python · Java · JavaScript" },
+    db: { title: "Bases de dados", items: "PostgreSQL · MySQL" },
+    cloud: { title: "Cloud", items: "AWS · Azure · Google Cloud" },
+    tools: { title: "Ferramentas dev", items: "Git · Postman · VS Code · IntelliJ · Eclipse · NetBeans · PyCharm · DBeaver · PhpMyAdmin · XAMPP" },
+    platforms: { title: "Plataformas web", items: "WordPress · WooCommerce · PrestaShop · Moodle" },
+
+    examplesTitle: "Projetos que comprovam o stack",
+    examplesDesc: "Cada página inclui exemplos, links do repositório e uma explicação do que foi desenvolvido.",
+    linkOdoo: "Portfólio Odoo",
+    linkData: "Repo Data (Pandas/NumPy)",
+    linkReact: "Repo projeto React",
+    linkJava: "Repo projeto Java"
+  },
+
+  ai: {
+    kicker: "IA",
+    title: "Automação com IA",
+    subtitle: "IA generativa + automação para acelerar operações, relatórios e suporte.",
+    cta: "Abrir página IA",
+    cta2: "Ver fluxos de IA",
+    usecasesTitle: "Casos de uso",
+    uc1: "Respostas automáticas + rascunhos de base de conhecimento.",
+    uc2: "Criação de tarefas no Odoo/CRM a partir de emails/formulários.",
+    uc3: "Relatórios semanais de KPIs e resumos de dashboards.",
+    uc4: "OCR de documentos → dados estruturados → importação para Odoo.",
+
+    1: "ChatGPT / Copilot / Gemini / Claude — redação, relatórios, atendimento ao cliente e suporte técnico.",
+    2: "Power Automate / Make / Zapier — automação administrativa e logística; integrações (Odoo, CRM, comunicação).",
+    3: "Notion AI / ClickUp Brain / Airtable AI — gestão inteligente de tarefas e projetos.",
+    4: "OCR — digitalização e extração automatizada de dados.",
+    5: "DALL·E / Midjourney / Leonardo.ai — criação de recursos visuais e criativos.",
+    6: "Runway / Pika Labs / Synthesia — vídeos explicativos e apresentações.",
+    7: "ChatGPT Code Interpreter / GitHub Copilot — assistência no desenvolvimento.",
+    8: "IA para logística — otimização de rotas, previsão de demanda e análise de dados."
+  },
+
+  design: {
+    kicker: "DESIGN",
+    title: "Design e Marketing",
+    subtitle: "UI design, identidade visual, materiais de marketing e bases de motion/vídeo.",
+    cta: "Abrir página design",
+    cta2: "Ver trabalhos de design",
+    cta3: "Abrir galeria",
+    cta4: "Contato",
+    block1: "Ferramentas de design",
+    block2: "O que entrego",
+
+    webui: { title: "Web / UI", items: "Figma · Draw.io · Ant Design · Layout responsivo" },
+    adobe: { title: "Adobe Suite", items: "Photoshop · Illustrator · InDesign" },
+    video: { title: "Vídeo / Motion", items: "Premiere · After Effects · Final Cut" },
+    audio: { title: "Áudio / Música", items: "Cubase · Finale · Dorico" },
+
+    deliver1: { title: "UI & landing pages", desc: "Layouts, componentes, responsivo e consistência visual." },
+    deliver2: { title: "Materiais de marketing", desc: "Banners, posts, apresentações e assets de marca." },
+    deliver3: { title: "Bases de vídeo e motion", desc: "Edições curtas, animações simples e vídeos tipo explainer." }
+  }
+}
+
+fr: {
+  nav: {
+    tech: "Technologies",
+    ai: "Automatisation IA",
+    design_market: "Design & Marketing"
+  },
+
+  tech: {
+    kicker: "TECHNOLOGIES",
+    title: "Stack de programmation",
+    subtitle: "Langages, frameworks, bases de données et outils utilisés dans des projets réels.",
+    cta: "Ouvrir la page tech",
+    cta2: "Voir la page tech complète",
+    cta3: "Aller aux projets",
+    block1: "Développement principal",
+    block2: "Exemples",
+
+    front: { title: "Frontend", items: "HTML5 · CSS3 · Bootstrap 5 · React" },
+    back: { title: "Backend", items: "Python · Java · JavaScript" },
+    db: { title: "Bases de données", items: "PostgreSQL · MySQL" },
+    cloud: { title: "Cloud", items: "AWS · Azure · Google Cloud" },
+    tools: { title: "Outils dev", items: "Git · Postman · VS Code · IntelliJ · Eclipse · NetBeans · PyCharm · DBeaver · PhpMyAdmin · XAMPP" },
+    platforms: { title: "Plateformes web", items: "WordPress · WooCommerce · PrestaShop · Moodle" },
+
+    examplesTitle: "Projets qui prouvent le stack",
+    examplesDesc: "Chaque page inclut des exemples, des liens vers le repo et une courte explication.",
+    linkOdoo: "Portfolio Odoo",
+    linkData: "Repo Data (Pandas/NumPy)",
+    linkReact: "Repo projet React",
+    linkJava: "Repo projet Java"
+  },
+
+  ai: {
+    kicker: "IA",
+    title: "Automatisation IA",
+    subtitle: "IA générative + automatisation pour accélérer les opérations, le reporting et le support.",
+    cta: "Ouvrir la page IA",
+    cta2: "Voir les workflows IA",
+    usecasesTitle: "Cas d’usage",
+    uc1: "Réponses client automatisées + brouillons de base de connaissance.",
+    uc2: "Création de tâches Odoo/CRM depuis emails/formulaires.",
+    uc3: "Rapports hebdo KPI + résumés de dashboards.",
+    uc4: "OCR documents → données structurées → import Odoo.",
+
+    1: "ChatGPT / Copilot / Gemini / Claude — rédaction, rapports, support client et aide technique.",
+    2: "Power Automate / Make / Zapier — automatisation admin & logistique; intégrations (Odoo, CRM, communication).",
+    3: "Notion AI / ClickUp Brain / Airtable AI — gestion intelligente des tâches et projets.",
+    4: "OCR — numérisation et extraction automatisée de données.",
+    5: "DALL·E / Midjourney / Leonardo.ai — ressources visuelles et créatifs marketing.",
+    6: "Runway / Pika Labs / Synthesia — vidéos explicatives et présentations.",
+    7: "ChatGPT Code Interpreter / GitHub Copilot — assistance au développement.",
+    8: "IA pour la logistique — optimisation d’itinéraires, prévision de la demande et analyses."
+  },
+
+  design: {
+    kicker: "DESIGN",
+    title: "Design & Marketing",
+    subtitle: "UI design, identité visuelle, assets marketing et bases en motion/vidéo.",
+    cta: "Ouvrir la page design",
+    cta2: "Voir les travaux",
+    cta3: "Ouvrir la galerie",
+    cta4: "Contact",
+    block1: "Outils de design",
+    block2: "Ce que je propose",
+
+    webui: { title: "Web / UI", items: "Figma · Draw.io · Ant Design · Responsive" },
+    adobe: { title: "Suite Adobe", items: "Photoshop · Illustrator · InDesign" },
+    video: { title: "Vidéo / Motion", items: "Premiere · After Effects · Final Cut" },
+    audio: { title: "Audio / Musique", items: "Cubase · Finale · Dorico" },
+
+    deliver1: { title: "UI & landing pages", desc: "Layouts, composants, responsive et cohérence visuelle." },
+    deliver2: { title: "Assets marketing", desc: "Bannières, posts, présentations et visuels de marque." },
+    deliver3: { title: "Bases vidéo & motion", desc: "Montages courts, animations simples et vidéos type explainer." }
+  }
+}
+
