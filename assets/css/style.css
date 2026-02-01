@@ -414,3 +414,42 @@ footer{
   }
 }
 
+/* --- Pro navbar fixes --- */
+.navbar-nav .nav-link{ white-space: nowrap; }          /* evita "AI \n Automation" */
+.navbar-nav{ flex-wrap: nowrap; }                      /* no rompe en desktop */
+
+@media (min-width: 992px){
+  #navLinks{ align-items: center; }
+}
+
+/* icon buttons (social) */
+.icon-btn{
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+  color: rgba(234,240,255,.92);
+  text-decoration: none;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.icon-btn:hover{
+  transform: translateY(-1px);
+  border-color: rgba(32,227,178,.45);
+  box-shadow: 0 18px 40px rgba(0,0,0,.25);
+}
+
+/* flags a tamaño pro (más compactas) */
+.flag-btn{
+  width: 42px; height: 42px;
+  border-radius: 12px;
+}
+
+/* dropdown look */
+.dropdown-menu{
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(10,14,25,.92);
+  backdrop-filter: blur(10px);
+}
+.dropdown-item{ white-space: nowrap; }
+
