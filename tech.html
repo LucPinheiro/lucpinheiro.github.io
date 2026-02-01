@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luciana Pinheiro · Technologies</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <!-- NAV (simple) -->
+  <nav class="navbar navbar-expand-lg topbar sticky-top">
+    <div class="container py-2">
+      <a class="navbar-brand fw-bold text-white" href="index.html#home">LP</a>
+
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <!-- flags (reutiliza tus estilos) -->
+        <button class="flag-btn" type="button" data-lang="en" aria-label="English" title="English">🇬🇧</button>
+        <button class="flag-btn" type="button" data-lang="es" aria-label="Español" title="Español">🇪🇸</button>
+        <button class="flag-btn" type="button" data-lang="pt" aria-label="Português" title="Português">🇧🇷</button>
+        <button class="flag-btn" type="button" data-lang="fr" aria-label="Français" title="Français">🇫🇷</button>
+
+        <a class="btn btn-outline-glow btn-sm" href="index.html#tech">
+          <i class="bi bi-arrow-left me-1"></i> <span data-i18n="techPage.back">Back</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3 reveal">
+          <div>
+            <div class="kicker mb-2" data-i18n="techPage.kicker">TECHNOLOGIES</div>
+            <h1 class="display-5 fw-black display-tight mb-2" data-i18n="techPage.title">Skills & Tools</h1>
+            <p class="text-muted-2 mb-0" data-i18n="techPage.subtitle">
+              Pages by technology with examples, mini demos and real projects.
+            </p>
+          </div>
+
+          <div class="d-flex gap-2">
+            <a class="btn btn-outline-glow" href="index.html#projects">
+              <span data-i18n="techPage.projectsBtn">View projects</span> <i class="bi bi-grid ms-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Filter -->
+        <div class="d-flex flex-wrap gap-2 mb-3 reveal">
+          <button class="btn btn-outline-glow btn-sm active" data-tech-filter="all">All</button>
+          <button class="btn btn-outline-glow btn-sm" data-tech-filter="odoo">Odoo</button>
+          <button class="btn btn-outline-glow btn-sm" data-tech-filter="data">Data</button>
+          <button class="btn btn-outline-glow btn-sm" data-tech-filter="frontend">Frontend</button>
+          <button class="btn btn-outline-glow btn-sm" data-tech-filter="backend">Backend</button>
+          <button class="btn btn-outline-glow btn-sm" data-tech-filter="ai">AI</button>
+          <button class="btn btn-outline-glow btn-sm" data-tech-filter="design">Design</button>
+        </div>
+
+        <!-- Cards -->
+        <div id="techGrid" class="row g-3"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- tu i18n global -->
+  <script src="assets/js/app.js"></script>
+  <!-- render de tech -->
+  <script src="assets/js/tech.js"></script>
+
+  <script>
+    // Si tu app.js ya tiene initLanguage() úsalo. Si no, no pasa nada.
+    if (window.initLanguage) window.initLanguage();
+  </script>
+</body>
+</html>
