@@ -325,6 +325,7 @@ const PROJECTS = [
     },
     tags: ["odoo", "python", "postgresql"]
   },
+
   {
     key: "data",
     category: "data",
@@ -337,10 +338,10 @@ const PROJECTS = [
       fr: "Analyse de données avec Python (Pandas & NumPy)"
     },
     desc: {
-      en: "Multi‑source integration (CSV/JSON/SQLite), cleaning, LEFT merges and EDA with data quality metrics.",
-      es: "Integración multi‑fuente (CSV/JSON/SQLite), limpieza, merges LEFT y EDA con métricas de calidad.",
-      pt: "Integração multi‑fonte (CSV/JSON/SQLite), limpeza, merges LEFT e EDA com métricas de qualidade.",
-      fr: "Intégration multi‑sources (CSV/JSON/SQLite), nettoyage, merges LEFT et EDA avec métriques de qualité."
+      en: "Multi-source integration (CSV/JSON/SQLite), cleaning, LEFT merges and EDA with data quality metrics.",
+      es: "Integración multi-fuente (CSV/JSON/SQLite), limpieza, merges LEFT y EDA con métricas de calidad.",
+      pt: "Integração multi-fonte (CSV/JSON/SQLite), limpeza, merges LEFT e EDA com métricas de qualidade.",
+      fr: "Intégration multi-sources (CSV/JSON/SQLite), nettoyage, merges LEFT et EDA avec métriques de qualité."
     },
     tags: ["python", "pandas", "numpy", "data"],
     gallery: [
@@ -351,9 +352,10 @@ const PROJECTS = [
       "assets/img/projects/pandas-numpy-geo.png"
     ]
   },
+
   {
     key: "java",
-    category: "data", // keep under "data" or "all" (no java filter in UI)
+    category: "web",
     link: "https://github.com/LucPinheiro/SistemaControlVacuna_Java",
     img: "assets/img/projects/java-vaccines-cover.svg",
     title: {
@@ -370,8 +372,9 @@ const PROJECTS = [
     },
     tags: ["java", "oop", "interfaces", "backend"]
   },
+
   {
-    key: "web",
+    key: "react",
     category: "web",
     link: "https://github.com/LucPinheiro/OjeadorDeportivo_React",
     img: "assets/img/projects/ojeador-cover.svg",
@@ -382,13 +385,72 @@ const PROJECTS = [
       fr: "Recruteur sportif (React)"
     },
     desc: {
-      en: "Role‑based SPA connecting scouts and families: player profiles with photos/videos, filtered search and hiring requests.",
+      en: "Role-based SPA connecting scouts and families: player profiles with photos/videos, filtered search and hiring requests.",
       es: "SPA por roles que conecta ojeadores y familias: perfiles con fotos/vídeos, búsqueda con filtros y solicitudes de contratación.",
       pt: "SPA por perfis conectando olheiros e famílias: perfis com fotos/vídeos, busca com filtros e solicitações.",
       fr: "SPA par rôles reliant recruteurs et familles : profils (photos/vidéos), recherche filtrée et demandes."
     },
     tags: ["react", "spa", "frontend", "ux"]
-  }
+  },
+
+  {
+  key: "django",
+  category: "web",
+  link: "https://github.com/LucPinheiro/gestor-tarea-django",
+
+  img: "assets/img/projects/django-cover.svg",
+
+  title: {
+    en: "Task Manager (Django)",
+    es: "Gestor de Tareas (Django)",
+    pt: "Gestor de Tarefas (Django)",
+    fr: "Gestionnaire de tâches (Django)"
+  },
+
+  desc: {
+    en: "Full CRUD application built with Django, Python and SQLite. Includes task management, CSV import/export, template inheritance and responsive interface.",
+    es: "Aplicación CRUD completa desarrollada con Django, Python y SQLite. Incluye gestión de tareas, importación/exportación CSV, herencia de plantillas e interfaz responsive.",
+    pt: "Aplicação CRUD completa desenvolvida com Django, Python e SQLite. Inclui gestão de tarefas, importação/exportação CSV, herança de templates e interface responsiva.",
+    fr: "Application CRUD complète développée avec Django, Python et SQLite. Inclut la gestion des tâches, l'import/export CSV, l'héritage de templates et une interface responsive."
+  },
+
+  tags: ["django", "python", "sqlite", "crud"],
+
+
+},
+
+{
+  key: "attendance",
+  category: "web",
+
+  link: "https://github.com/LucPinheiro/App-Asistencia-Odoo",
+
+  img: "assets/img/projects/attendance-cover.svg",
+
+  title: {
+    en: "Attendance App (React Native)",
+    es: "App de Asistencia (React Native)",
+    pt: "App de Presença (React Native)",
+    fr: "Application de Présence (React Native)"
+  },
+
+  desc: {
+    en: "Mobile and desktop application integrated with Odoo. Employee check-in/out, activity tracking, remaining hours and business process automation.",
+    es: "Aplicación móvil y escritorio integrada con Odoo. Check-in/out de empleados, seguimiento de actividades, horas restantes y automatización de procesos.",
+    pt: "Aplicação móvel e desktop integrada com Odoo. Check-in/out de colaboradores, acompanhamento de atividades e automação de processos.",
+    fr: "Application mobile et desktop intégrée à Odoo. Pointage, suivi d'activités et automatisation des processus."
+  },
+
+  tags: [
+    "react-native",
+    "electron",
+    "odoo",
+    "mobile"
+  ]
+}
+
+
+
 ];
 
 const grid = document.getElementById("projectsGrid");

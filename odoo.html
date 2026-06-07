@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Odoo · Portfolio</title>
-  <meta name="description" content="Odoo portfolio · modules · integrations · migrations" />
+  <meta name="description" content="Odoo portfolio · consulting · development · integrations · modules" />
 
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
@@ -17,6 +18,15 @@
       --c2:#B87AAE;
       --c3:#F2E6F1;
     }
+
+    body.odoo-theme{
+      background:
+        radial-gradient(1200px 700px at 12% 8%, rgba(135,90,123,.26), transparent 60%),
+        radial-gradient(1000px 600px at 88% 12%, rgba(46,160,255,.16), transparent 60%),
+        radial-gradient(900px 700px at 75% 85%, rgba(184,122,174,.18), transparent 65%),
+        linear-gradient(135deg, #050512 0%, #07172d 45%, #07132a 100%);
+    }
+
     .odoo-pill{
       background: rgba(135,90,123,.14);
       border: 1px solid rgba(135,90,123,.28);
@@ -26,98 +36,175 @@
       font-weight: 700;
       font-size: .9rem;
     }
-    .odoo-link{
-      color: rgba(234,240,255,.9);
-      text-decoration: none;
+
+    .odoo-subnav{
+      position: sticky;
+      top: 72px;
+      z-index: 1010;
+      padding: 12px 0;
+      background: rgba(5,5,18,.62);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .odoo-link:hover{ text-decoration: underline; }
+
+    .odoo-subnav-link{
+      display: inline-flex;
+      align-items: center;
+      padding: .55rem .9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(234,240,255,.86);
+      text-decoration: none;
+      font-size: .92rem;
+      font-weight: 700;
+      transition: all .18s ease;
+    }
+
+    .odoo-subnav-link:hover{
+      color: #fff;
+      border-color: rgba(184,122,174,.45);
+      background: rgba(135,90,123,.18);
+      transform: translateY(-1px);
+    }
+
+    .odoo-feature-icon{
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(135,90,123,.16);
+      border: 1px solid rgba(184,122,174,.25);
+      color: rgba(242,230,241,.95);
+      font-size: 1.25rem;
+      flex: 0 0 auto;
+    }
+
+    .odoo-section-card{
+      height: 100%;
+    }
+
+    .odoo-mini-link{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      margin-top:14px;
+      color:rgba(184,122,174,.98);
+      font-size:.9rem;
+      font-weight:800;
+      text-decoration:none;
+      transition:.2s ease;
+    }
+
+    .odoo-mini-link:hover{
+      color:#fff;
+      transform:translateX(2px);
+    }
+
+    @media (max-width: 991.98px){
+      .odoo-subnav{
+        top: 64px;
+      }
+    }
   </style>
 </head>
 
-<body class="odoo-theme">
+<body class="odoo-theme" data-bs-spy="scroll" data-bs-target="#odooInternalNav" tabindex="-1">
   <div class="noise"></div>
 
-  <!-- TOPBAR -->
-  <nav class="navbar topbar sticky-top">
-    <div class="container py-2">
-      <a class="btn btn-outline-glow btn-sm" href="index.html#odoo">
-        <i class="bi bi-arrow-left me-1"></i> <span data-i18n="odooPage.back">Back</span>
-      </a>
+  <!-- MAIN NAV -->
+  <nav id="topNav" class="navbar navbar-expand-lg topbar sticky-top">
+    <div class="container-fluid px-4 px-xl-5 py-2">
+      <a class="navbar-brand fw-bold text-white" href="index.html#home">LP</a>
 
-       <!-- NAV -->
-<nav id="topNav" class="navbar navbar-expand-lg topbar sticky-top">
-  <div class="container py-2">
-    <a class="navbar-brand fw-bold text-white" href="#home">LP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-label="Open menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-label="Open menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <div id="navLinks" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
 
-    <div id="navLinks" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="#home" data-i18n="nav.home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#odoo" data-i18n="nav.odoo">Odoo</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tech" data-i18n="nav.tech">Technologies</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav.experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#home" data-i18n="nav.home">Home</a>
+          </li>
 
-        <!-- More dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.more">
-            More
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#odoo-page-top" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.odoo">
+              Odoo
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#odoo-consulting" data-i18n="nav.odooConsulting">Consulting</a></li>
+              <li><a class="dropdown-item" href="#odoo-development" data-i18n="nav.odooDevelopment">Development</a></li>
+              <li><a class="dropdown-item" href="#odoo-integrations" data-i18n="nav.odooIntegrations">Integrations</a></li>
+              <li><a class="dropdown-item" href="#odoo-portfolio" data-i18n="nav.odooPortfolio">Portfolio</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="index.html#ai" data-i18n="nav.ai">AI & Automation</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#data_analytics" data-i18n="nav.data">Data Analytics</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#training" data-i18n="nav.training">Training</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#design_market" data-i18n="nav.creative">Creative</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.more">
+              More
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+              <li><a class="dropdown-item" href="index.html#tech" data-i18n="nav.tech">Technologies</a></li>
+              <li><a class="dropdown-item" href="index.html#experience" data-i18n="nav.experience">Experience</a></li>
+              <li><a class="dropdown-item" href="index.html#education" data-i18n="nav.education">Education</a></li>
+              <li><a class="dropdown-item" href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="nav-actions d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
+          <div class="dropdown">
+            <button id="langCurrent" class="lang-btn dropdown-toggle active" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Language" title="Language">
+              EN
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end lang-dropdown">
+              <li><button class="dropdown-item lang-option" type="button" data-lang="en">🇬🇧 English</button></li>
+              <li><button class="dropdown-item lang-option" type="button" data-lang="es">🇪🇸 Español</button></li>
+              <li><button class="dropdown-item lang-option" type="button" data-lang="pt">🇧🇷 Português</button></li>
+              <li><button class="dropdown-item lang-option" type="button" data-lang="fr">🇫🇷 Français</button></li>
+            </ul>
+          </div>
+
+          <a class="icon-btn" href="https://github.com/LucPinheiro" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+            <i class="bi bi-github"></i>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#ai" data-i18n="nav.ai">AI Automation</a></li>
-            <li><a class="dropdown-item" href="#design_market" data-i18n="nav.design_market">Design & Marketing</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#education" data-i18n="nav.education">Education</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <!-- Flags -->
-      <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
-        <button class="flag-btn" type="button" data-lang="en" aria-label="English" title="English">🇬🇧</button>
-        <button class="flag-btn" type="button" data-lang="es" aria-label="Español" title="Español">🇪🇸</button>
-        <button class="flag-btn" type="button" data-lang="pt" aria-label="Português" title="Português">🇧🇷</button>
-        <button class="flag-btn" type="button" data-lang="fr" aria-label="Français" title="Français">🇫🇷</button>
+          <a class="icon-btn" href="https://www.linkedin.com/in/lupinheiroofficial/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a class="icon-btn" href="mailto:lupinheiro.dev@gmail.com" aria-label="Email" title="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+        </div>
       </div>
-
-      <!-- Social -->
-      <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0">
-        <a class="icon-btn" href="https://github.com/LucPinheiro" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
-          <i class="bi bi-github"></i>
-        </a>
-        <a class="icon-btn" href="https://www.linkedin.com/in/lupinheiroofficial/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
-          <i class="bi bi-linkedin"></i>
-        </a>
-        <a class="icon-btn" href="mailto:lupinheiro.dev@gmail.com" aria-label="Email" title="Email">
-          <i class="bi bi-envelope"></i>
-        </a>
-      </div>
-    </div> <!-- /#navLinks -->
-  </div> <!-- /.container -->
-</nav>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header>
+  <header id="odoo-page-top">
     <section class="pt-5">
       <div class="container">
         <div class="row g-3 align-items-center">
           <div class="col-12 col-lg-8">
             <div class="reveal">
-              <div class="kicker mb-2">ERP</div>
+              <div class="kicker mb-2">ERP · ODOO</div>
               <h1 class="display-5 fw-black display-tight mb-3" data-i18n="odooPage.title">Odoo Portfolio</h1>
               <p class="lead mb-4" data-i18n="odooPage.subtitle">
-                Selected Odoo work: custom addons, migrations and integrations for real business workflows.
+                Selected Odoo work: consulting, custom addons, migrations and integrations for real business workflows.
               </p>
 
               <div class="d-flex flex-wrap gap-2">
                 <span class="odoo-pill">Odoo 14</span>
                 <span class="odoo-pill">Odoo 15</span>
+                <span class="odoo-pill">Odoo 16+</span>
                 <span class="odoo-pill" data-i18n="odooPage.stack">Python · PostgreSQL · XML · QWeb</span>
               </div>
 
@@ -125,8 +212,8 @@
                 <a class="btn btn-odoo px-4" href="https://github.com/LucPinheiro/ModulosOdoo" target="_blank" rel="noreferrer">
                   <i class="bi bi-github me-1"></i> <span data-i18n="odooPage.repo">View repo</span>
                 </a>
-                <a class="btn btn-outline-glow px-4" href="https://www.odoo.com/es_ES" target="_blank" rel="noreferrer">
-                  <i class="bi bi-box-arrow-up-right me-1"></i> <span data-i18n="odooPage.odooSite">Odoo website</span>
+                <a class="btn btn-outline-glow px-4" href="index.html#odoo">
+                  <i class="bi bi-arrow-left me-1"></i> <span data-i18n="odooPage.back">Back to CV</span>
                 </a>
               </div>
             </div>
@@ -137,11 +224,11 @@
               <div class="glow-inner">
                 <div class="fw-bold mb-2" data-i18n="odooPage.what">What I do with Odoo</div>
                 <ul class="text-muted-2 mb-0">
-                  <li data-i18n="odooPage.f1">Install & configure Community/Enterprise environments (virtualenv, dependencies).</li>
-                  <li data-i18n="odooPage.f2">Version migrations and upgrades.</li>
-                  <li data-i18n="odooPage.f3">Database design + import/export tools.</li>
-                  <li data-i18n="odooPage.f4">Custom modules: models, views, wizards, security, reports.</li>
-                  <li data-i18n="odooPage.f5">SEO / web optimisation + documentation (README) and Git workflow.</li>
+                  <li data-i18n="odooPage.f1">Functional analysis and module configuration.</li>
+                  <li data-i18n="odooPage.f2">Custom modules: models, views, wizards, security and reports.</li>
+                  <li data-i18n="odooPage.f3">Data import/export, migrations and upgrades.</li>
+                  <li data-i18n="odooPage.f4">QWeb report customization and business workflows.</li>
+                  <li data-i18n="odooPage.f5">Documentation, Git workflow and user support.</li>
                 </ul>
               </div>
             </div>
@@ -152,14 +239,210 @@
     </section>
   </header>
 
-  <!-- MODULES -->
-  <section>
+  <!-- ODOO INTERNAL MENU -->
+  <div id="odooInternalNav" class="odoo-subnav">
+    <div class="container">
+      <div class="d-flex flex-wrap gap-2 justify-content-center">
+        <a class="odoo-subnav-link" href="#odoo-consulting">
+          <i class="bi bi-diagram-3 me-1"></i> <span data-i18n="nav.odooConsulting">Consulting</span>
+        </a>
+        <a class="odoo-subnav-link" href="#odoo-development">
+          <i class="bi bi-code-slash me-1"></i> <span data-i18n="nav.odooDevelopment">Development</span>
+        </a>
+        <a class="odoo-subnav-link" href="#odoo-integrations">
+          <i class="bi bi-plug me-1"></i> <span data-i18n="nav.odooIntegrations">Integrations</span>
+        </a>
+        <a class="odoo-subnav-link" href="#odoo-portfolio">
+          <i class="bi bi-box-seam me-1"></i> <span data-i18n="nav.odooPortfolio">Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONSULTING -->
+  <section id="odoo-consulting">
+    <div class="container">
+      <div class="row g-3 align-items-stretch">
+        <div class="col-12 col-lg-5">
+          <div class="glow-card reveal h-100">
+            <div class="glow-inner">
+              <div class="kicker mb-2" data-i18n="consulting.kicker">Consulting</div>
+              <h2 class="h2 fw-bold mb-3" data-i18n="consulting.title">Functional Odoo Consulting</h2>
+              <p class="text-muted-2 mb-0" data-i18n="consulting.text">
+                I help translate business needs into Odoo workflows: process analysis, module configuration, user support, functional testing and documentation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="d-flex gap-3">
+                  <div class="odoo-feature-icon"><i class="bi bi-diagram-3"></i></div>
+                  <div>
+                    <div class="fw-bold" data-i18n="consulting.c1.title">Process analysis</div>
+                    <div class="small text-muted-2" data-i18n="consulting.c1.text">Map current workflows and identify where Odoo can simplify daily operations.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="d-flex gap-3">
+                  <div class="odoo-feature-icon"><i class="bi bi-sliders"></i></div>
+                  <div>
+                    <div class="fw-bold" data-i18n="consulting.c2.title">Configuration</div>
+                    <div class="small text-muted-2" data-i18n="consulting.c2.text">Adapt modules, views, permissions and settings to real user needs.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="d-flex gap-3">
+                  <div class="odoo-feature-icon"><i class="bi bi-check2-circle"></i></div>
+                  <div>
+                    <div class="fw-bold" data-i18n="consulting.c3.title">Functional testing</div>
+                    <div class="small text-muted-2" data-i18n="consulting.c3.text">Validate flows, edge cases and business rules before production use.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="d-flex gap-3">
+                  <div class="odoo-feature-icon"><i class="bi bi-person-video3"></i></div>
+                  <div>
+                    <div class="fw-bold" data-i18n="consulting.c4.title">User support</div>
+                    <div class="small text-muted-2" data-i18n="consulting.c4.text">Training, documentation and support for teams using Odoo every day.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVELOPMENT -->
+  <section id="odoo-development">
+    <div class="container">
+      <div class="row g-3 align-items-stretch">
+        <div class="col-12 col-lg-5">
+          <div class="glow-card reveal h-100">
+            <div class="glow-inner">
+              <div class="kicker mb-2" data-i18n="development.kicker">Development</div>
+              <h2 class="h2 fw-bold mb-3" data-i18n="development.title">Custom Modules & QWeb Reports</h2>
+              <p class="text-muted-2 mb-0" data-i18n="development.text">
+                Technical development with Python, XML, PostgreSQL and Odoo framework: models, views, security, wizards, computed fields and reports.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="fw-bold mb-2"><i class="bi bi-code-slash me-2"></i><span data-i18n="development.c1.title">Python models</span></div>
+                <div class="small text-muted-2" data-i18n="development.c1.text">Business logic, computed fields, constraints, onchange methods and automated actions.</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="fw-bold mb-2"><i class="bi bi-window-sidebar me-2"></i><span data-i18n="development.c2.title">Views & wizards</span></div>
+                <div class="small text-muted-2" data-i18n="development.c2.text">Form views, tree views, search views, transient models and guided user flows.</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="fw-bold mb-2"><i class="bi bi-shield-lock me-2"></i><span data-i18n="development.c3.title">Security</span></div>
+                <div class="small text-muted-2" data-i18n="development.c3.text">Groups, access rights, record rules and controlled access to sensitive workflows.</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="fw-bold mb-2"><i class="bi bi-file-earmark-text me-2"></i><span data-i18n="development.c4.title">QWeb reports</span></div>
+                <div class="small text-muted-2" data-i18n="development.c4.text">PDF report customization for sales, invoices, GDPR clauses and business documents.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section id="odoo-integrations">
+    <div class="container">
+      <div class="row g-3 align-items-stretch">
+        <div class="col-12 col-lg-5">
+          <div class="glow-card reveal h-100">
+            <div class="glow-inner">
+              <div class="kicker mb-2" data-i18n="integrations.kicker">Integrations</div>
+              <h2 class="h2 fw-bold mb-3" data-i18n="integrations.title">APIs, Imports & Automation</h2>
+              <p class="text-muted-2 mb-0" data-i18n="integrations.text">
+                Data flows between Odoo and external systems: imports, exports, APIs, CRM workflows, reporting flows and automation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-7">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="fw-bold mb-2"><i class="bi bi-filetype-csv me-2"></i><span data-i18n="integrations.c1.title">CSV / Excel imports</span></div>
+                <div class="small text-muted-2" data-i18n="integrations.c1.text">Structured import/export processes for products, sales, inventory and business data.</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="fw-bold mb-2"><i class="bi bi-plug me-2"></i><span data-i18n="integrations.c2.title">API connections</span></div>
+                <div class="small text-muted-2" data-i18n="integrations.c2.text">External system connections, JSON-RPC concepts and workflow automation.</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="fw-bold mb-2"><i class="bi bi-graph-up-arrow me-2"></i><span data-i18n="integrations.c3.title">Reporting flows</span></div>
+                <div class="small text-muted-2" data-i18n="integrations.c3.text">Data extraction and reporting logic for business monitoring and decision-making.</div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <div class="mini-card odoo-section-card reveal">
+                <div class="fw-bold mb-2"><i class="bi bi-arrow-repeat me-2"></i><span data-i18n="integrations.c4.title">Automation</span></div>
+                <div class="small text-muted-2" data-i18n="integrations.c4.text">Automated actions, scheduled operations and workflow improvements inside Odoo.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO / MODULES -->
+  <section id="odoo-portfolio">
     <div class="container">
       <div class="reveal mb-3">
-        <div class="kicker mb-2" data-i18n="odooPage.modulesKicker">Addons</div>
-        <h2 class="h2 fw-bold mb-1" data-i18n="odooPage.modulesTitle">Selected modules</h2>
+        <div class="kicker mb-2" data-i18n="odooPage.modulesKicker">Portfolio · Addons</div>
+        <h2 class="h2 fw-bold mb-1" data-i18n="odooPage.modulesTitle">Selected Odoo Modules</h2>
         <p class="text-muted-2 mb-0" data-i18n="odooPage.modulesSub">
-          A snapshot of real addons built/customized across Purchasing, Inventory, MRP, Accounting, Sales and HR.
+          A snapshot of real addons built or customized across Purchasing, Inventory, MRP, Accounting, Sales and HR.
         </p>
       </div>
 
@@ -167,7 +450,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="glow-card h-100 reveal">
             <div class="glow-inner">
-              <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-between align-items-start gap-2">
                 <div class="fw-bold">Customers Product Code Inherit</div>
                 <span class="odoo-pill">Odoo 14</span>
               </div>
@@ -186,7 +469,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="glow-card h-100 reveal">
             <div class="glow-inner">
-              <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-between align-items-start gap-2">
                 <div class="fw-bold">FCD (Fishing Capture Document)</div>
                 <span class="odoo-pill">Odoo 14</span>
               </div>
@@ -205,7 +488,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="glow-card h-100 reveal">
             <div class="glow-inner">
-              <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-between align-items-start gap-2">
                 <div class="fw-bold">FCD Weight Scale (MRP)</div>
                 <span class="odoo-pill">Odoo 14</span>
               </div>
@@ -224,7 +507,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="glow-card h-100 reveal">
             <div class="glow-inner">
-              <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-between align-items-start gap-2">
                 <div class="fw-bold">Invoice User Authorization Payment</div>
                 <span class="odoo-pill">Odoo 14</span>
               </div>
@@ -243,7 +526,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="glow-card h-100 reveal">
             <div class="glow-inner">
-              <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-between align-items-start gap-2">
                 <div class="fw-bold">Sale Order Expected Date</div>
                 <span class="odoo-pill">Odoo 14</span>
               </div>
@@ -262,7 +545,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="glow-card h-100 reveal">
             <div class="glow-inner">
-              <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-between align-items-start gap-2">
                 <div class="fw-bold">Web Footer GDPR Report</div>
                 <span class="odoo-pill">Odoo 15</span>
               </div>
@@ -281,7 +564,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="glow-card h-100 reveal">
             <div class="glow-inner">
-              <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-between align-items-start gap-2">
                 <div class="fw-bold">Invoice Qty Number in Sale Order</div>
                 <span class="odoo-pill">Odoo 15</span>
               </div>
@@ -300,7 +583,7 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="glow-card h-100 reveal">
             <div class="glow-inner">
-              <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-between align-items-start gap-2">
                 <div class="fw-bold">HR Attendance Menu Filter</div>
                 <span class="odoo-pill">Odoo 15</span>
               </div>
@@ -319,12 +602,12 @@
         <div class="col-12 col-md-6 col-lg-4">
           <div class="glow-card h-100 reveal">
             <div class="glow-inner">
-              <div class="d-flex justify-content-between align-items-start">
+              <div class="d-flex justify-content-between align-items-start gap-2">
                 <div class="fw-bold">HR Attendance User Edit Check In/Out</div>
                 <span class="odoo-pill">Odoo 15</span>
               </div>
               <div class="small text-muted-2 mt-2" data-i18n="odooPage.m9">
-                Allows attendance users to edit their own check‑in/check‑out entries afterwards.
+                Allows attendance users to edit their own check-in/check-out entries afterwards.
               </div>
               <div class="mt-3">
                 <a class="btn btn-outline-glow btn-sm" href="https://github.com/solvosci/slv-hr/tree/15.0/hr_attendance_user_edit_check_in_out" target="_blank" rel="noreferrer">
@@ -358,31 +641,78 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // scroll reveal
-    const io = new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show");}),{threshold:0.12});
-    document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-  </script>
 
   <script>
-    // Minimal i18n just for this page
     const T = {
       en:{
-        "odooPage.back":"Back",
+        "nav.home":"Home",
+        "nav.odoo":"Odoo",
+        "nav.ai":"AI & Automation",
+        "nav.data":"Data Analytics",
+        "nav.training":"Training",
+        "nav.creative":"Creative",
+        "nav.projects":"Projects",
+        "nav.more":"More",
+        "nav.tech":"Technologies",
+        "nav.experience":"Experience",
+        "nav.education":"Education",
+        "nav.contact":"Contact",
+        "nav.odooConsulting":"Consulting",
+        "nav.odooDevelopment":"Development",
+        "nav.odooIntegrations":"Integrations",
+        "nav.odooPortfolio":"Portfolio",
+
+        "odooPage.back":"Back to CV",
         "odooPage.title":"Odoo Portfolio",
-        "odooPage.subtitle":"Selected Odoo work: custom addons, migrations and integrations for real business workflows.",
+        "odooPage.subtitle":"Selected Odoo work: consulting, custom addons, migrations and integrations for real business workflows.",
         "odooPage.stack":"Python · PostgreSQL · XML · QWeb",
         "odooPage.repo":"View repo",
-        "odooPage.odooSite":"Odoo website",
         "odooPage.what":"What I do with Odoo",
-        "odooPage.f1":"Install & configure Community/Enterprise environments (virtualenv, dependencies).",
-        "odooPage.f2":"Version migrations and upgrades.",
-        "odooPage.f3":"Database design + import/export tools.",
-        "odooPage.f4":"Custom modules: models, views, wizards, security, reports.",
-        "odooPage.f5":"SEO / web optimisation + documentation (README) and Git workflow.",
-        "odooPage.modulesKicker":"Addons",
-        "odooPage.modulesTitle":"Selected modules",
-        "odooPage.modulesSub":"A snapshot of real addons built/customized across Purchasing, Inventory, MRP, Accounting, Sales and HR.",
+        "odooPage.f1":"Functional analysis and module configuration.",
+        "odooPage.f2":"Custom modules: models, views, wizards, security and reports.",
+        "odooPage.f3":"Data import/export, migrations and upgrades.",
+        "odooPage.f4":"QWeb report customization and business workflows.",
+        "odooPage.f5":"Documentation, Git workflow and user support.",
+
+        "consulting.kicker":"Consulting",
+        "consulting.title":"Functional Odoo Consulting",
+        "consulting.text":"I help translate business needs into Odoo workflows: process analysis, module configuration, user support, functional testing and documentation.",
+        "consulting.c1.title":"Process analysis",
+        "consulting.c1.text":"Map current workflows and identify where Odoo can simplify daily operations.",
+        "consulting.c2.title":"Configuration",
+        "consulting.c2.text":"Adapt modules, views, permissions and settings to real user needs.",
+        "consulting.c3.title":"Functional testing",
+        "consulting.c3.text":"Validate flows, edge cases and business rules before production use.",
+        "consulting.c4.title":"User support",
+        "consulting.c4.text":"Training, documentation and support for teams using Odoo every day.",
+
+        "development.kicker":"Development",
+        "development.title":"Custom Modules & QWeb Reports",
+        "development.text":"Technical development with Python, XML, PostgreSQL and Odoo framework: models, views, security, wizards, computed fields and reports.",
+        "development.c1.title":"Python models",
+        "development.c1.text":"Business logic, computed fields, constraints, onchange methods and automated actions.",
+        "development.c2.title":"Views & wizards",
+        "development.c2.text":"Form views, tree views, search views, transient models and guided user flows.",
+        "development.c3.title":"Security",
+        "development.c3.text":"Groups, access rights, record rules and controlled access to sensitive workflows.",
+        "development.c4.title":"QWeb reports",
+        "development.c4.text":"PDF report customization for sales, invoices, GDPR clauses and business documents.",
+
+        "integrations.kicker":"Integrations",
+        "integrations.title":"APIs, Imports & Automation",
+        "integrations.text":"Data flows between Odoo and external systems: imports, exports, APIs, CRM workflows, reporting flows and automation.",
+        "integrations.c1.title":"CSV / Excel imports",
+        "integrations.c1.text":"Structured import/export processes for products, sales, inventory and business data.",
+        "integrations.c2.title":"API connections",
+        "integrations.c2.text":"External system connections, JSON-RPC concepts and workflow automation.",
+        "integrations.c3.title":"Reporting flows",
+        "integrations.c3.text":"Data extraction and reporting logic for business monitoring and decision-making.",
+        "integrations.c4.title":"Automation",
+        "integrations.c4.text":"Automated actions, scheduled operations and workflow improvements inside Odoo.",
+
+        "odooPage.modulesKicker":"Portfolio · Addons",
+        "odooPage.modulesTitle":"Selected Odoo Modules",
+        "odooPage.modulesSub":"A snapshot of real addons built or customized across Purchasing, Inventory, MRP, Accounting, Sales and HR.",
         "odooPage.m1":"Adds QR reading wizard to capture purchase order data for fishing documents.",
         "odooPage.m2":"New inventory models + zones/subzones, vessels and quality control linked to scanned lots.",
         "odooPage.m3":"Weight scale checkpoint for packaging lots, including company context and confirmation flow.",
@@ -391,97 +721,131 @@
         "odooPage.m6":"Adds GDPR clauses to sales order & invoice PDF reports via settings.",
         "odooPage.m7":"Counts number of invoices per sales order and adds filters in search view.",
         "odooPage.m8":"Default “This week” filter and quick filters (today/yesterday/this week/last week) across views.",
-        "odooPage.m9":"Allows attendance users to edit their own check‑in/check‑out entries afterwards.",
+        "odooPage.m9":"Allows attendance users to edit their own check-in/check-out entries afterwards.",
         "odooPage.cta":"Want the full list of Odoo work and code? Visit the GitHub repository.",
         "odooPage.openRepo":"Open ModulosOdoo"
       },
       es:{
-        "odooPage.back":"Volver",
+        "nav.home":"Inicio",
+        "nav.odoo":"Odoo",
+        "nav.ai":"IA & Automatización",
+        "nav.data":"Análisis de Datos",
+        "nav.training":"Formación",
+        "nav.creative":"Creative",
+        "nav.projects":"Proyectos",
+        "nav.more":"Más",
+        "nav.tech":"Tecnologías",
+        "nav.experience":"Experiencia",
+        "nav.education":"Educación",
+        "nav.contact":"Contacto",
+        "nav.odooConsulting":"Consultoría",
+        "nav.odooDevelopment":"Desarrollo",
+        "nav.odooIntegrations":"Integraciones",
+        "nav.odooPortfolio":"Portfolio",
+
+        "odooPage.back":"Volver al CV",
         "odooPage.title":"Portfolio Odoo",
-        "odooPage.subtitle":"Trabajos Odoo seleccionados: addons a medida, migraciones e integraciones para flujos reales de negocio.",
+        "odooPage.subtitle":"Trabajos Odoo seleccionados: consultoría, addons a medida, migraciones e integraciones para flujos reales de negocio.",
         "odooPage.stack":"Python · PostgreSQL · XML · QWeb",
         "odooPage.repo":"Ver repo",
-        "odooPage.odooSite":"Web de Odoo",
         "odooPage.what":"Qué hago con Odoo",
-        "odooPage.f1":"Instalación y configuración (virtualenv, dependencias) en Community/Enterprise.",
-        "odooPage.f2":"Migraciones y upgrades entre versiones.",
-        "odooPage.f3":"Diseño de base de datos + importación/exportación.",
-        "odooPage.f4":"Módulos a medida: modelos, vistas, asistentes, seguridad, reportes.",
-        "odooPage.f5":"SEO/optimización web + documentación (README) y flujo Git.",
-        "odooPage.modulesKicker":"Addons",
-        "odooPage.modulesTitle":"Módulos destacados",
-        "odooPage.modulesSub":"Muestra de addons reales en Compras, Inventario, MRP, Contabilidad, Ventas y RRHH.",
-        "odooPage.m1":"Asistente de lectura QR para capturar datos del pedido de compra (documento de pesca).",
-        "odooPage.m2":"Nuevos modelos de inventario + zonas/subzonas, buques y control de calidad ligado a lotes escaneados.",
-        "odooPage.m3":"Punto de control de báscula para empaquetado, con compañía y flujo de confirmación.",
-        "odooPage.m4":"Restricciones contables: usuario autorizador de pago + grupos y filtros de seguridad.",
-        "odooPage.m5":"Calcula fecha estimada desde presupuesto/pedido y la muestra en formularios e informes.",
+        "odooPage.f1":"Análisis funcional y configuración de módulos.",
+        "odooPage.f2":"Módulos a medida: modelos, vistas, asistentes, seguridad e informes.",
+        "odooPage.f3":"Importación/exportación de datos, migraciones y upgrades.",
+        "odooPage.f4":"Personalización de informes QWeb y flujos de negocio.",
+        "odooPage.f5":"Documentación, flujo Git y soporte a usuarios.",
+
+        "consulting.kicker":"Consultoría",
+        "consulting.title":"Consultoría Funcional Odoo",
+        "consulting.text":"Ayudo a traducir necesidades de negocio en flujos de trabajo dentro de Odoo: análisis de procesos, configuración, soporte, pruebas funcionales y documentación.",
+        "consulting.c1.title":"Análisis de procesos",
+        "consulting.c1.text":"Mapeo de flujos actuales e identificación de mejoras dentro de Odoo.",
+        "consulting.c2.title":"Configuración",
+        "consulting.c2.text":"Adaptación de módulos, vistas, permisos y ajustes a las necesidades reales.",
+        "consulting.c3.title":"Pruebas funcionales",
+        "consulting.c3.text":"Validación de flujos, casos límite y reglas de negocio antes de producción.",
+        "consulting.c4.title":"Soporte a usuarios",
+        "consulting.c4.text":"Formación, documentación y soporte para equipos que trabajan con Odoo.",
+
+        "development.kicker":"Desarrollo",
+        "development.title":"Módulos a Medida e Informes QWeb",
+        "development.text":"Desarrollo técnico con Python, XML, PostgreSQL y framework Odoo: modelos, vistas, seguridad, asistentes, campos calculados e informes.",
+        "development.c1.title":"Modelos Python",
+        "development.c1.text":"Lógica de negocio, campos calculados, constraints, onchange y acciones automáticas.",
+        "development.c2.title":"Vistas y asistentes",
+        "development.c2.text":"Vistas formulario, lista, búsqueda, transient models y flujos guiados.",
+        "development.c3.title":"Seguridad",
+        "development.c3.text":"Grupos, permisos, reglas de registro y acceso controlado a procesos sensibles.",
+        "development.c4.title":"Informes QWeb",
+        "development.c4.text":"Personalización de PDFs para ventas, facturas, cláusulas GDPR y documentos de negocio.",
+
+        "integrations.kicker":"Integraciones",
+        "integrations.title":"APIs, Importaciones y Automatización",
+        "integrations.text":"Flujos de datos entre Odoo y sistemas externos: importaciones, exportaciones, APIs, CRM, reporting y automatización.",
+        "integrations.c1.title":"Importaciones CSV / Excel",
+        "integrations.c1.text":"Procesos estructurados para productos, ventas, inventario y datos de negocio.",
+        "integrations.c2.title":"Conexiones API",
+        "integrations.c2.text":"Conexiones con sistemas externos, conceptos JSON-RPC y automatización.",
+        "integrations.c3.title":"Flujos de reporting",
+        "integrations.c3.text":"Extracción de datos y lógica de informes para seguimiento del negocio.",
+        "integrations.c4.title":"Automatización",
+        "integrations.c4.text":"Acciones automáticas, operaciones programadas y mejoras de flujo dentro de Odoo.",
+
+        "odooPage.modulesKicker":"Portfolio · Addons",
+        "odooPage.modulesTitle":"Módulos Odoo destacados",
+        "odooPage.modulesSub":"Muestra de addons reales desarrollados o personalizados en Compras, Inventario, MRP, Contabilidad, Ventas y RRHH.",
+        "odooPage.m1":"Asistente de lectura QR para capturar datos del pedido de compra en documentos de pesca.",
+        "odooPage.m2":"Nuevos modelos de inventario, zonas/subzonas, buques y control de calidad vinculado a lotes escaneados.",
+        "odooPage.m3":"Punto de control de báscula para empaquetado, con contexto de compañía y flujo de confirmación.",
+        "odooPage.m4":"Restricciones contables: usuario autorizador de pago, grupos y filtros de seguridad.",
+        "odooPage.m5":"Calcula la fecha estimada desde presupuesto/pedido y la muestra en formularios e informes.",
         "odooPage.m6":"Añade cláusulas GDPR en PDFs de pedidos y facturas mediante ajustes.",
         "odooPage.m7":"Cuenta el número de facturas por pedido y añade filtros en la búsqueda.",
-        "odooPage.m8":"Filtro por defecto “Esta semana” y filtros rápidos (hoy/ayer/esta semana/semana pasada).",
-        "odooPage.m9":"Permite editar posteriormente la entrada/salida de la propia asistencia.",
+        "odooPage.m8":"Filtro por defecto “Esta semana” y filtros rápidos en varias vistas.",
+        "odooPage.m9":"Permite a usuarios editar posteriormente sus propias entradas/salidas.",
         "odooPage.cta":"¿Quieres la lista completa y el código? Visita el repositorio en GitHub.",
         "odooPage.openRepo":"Abrir ModulosOdoo"
       },
-      pt:{
-        "odooPage.back":"Voltar",
-        "odooPage.title":"Portfólio Odoo",
-        "odooPage.subtitle":"Trabalhos Odoo selecionados: addons sob medida, migrações e integrações para fluxos reais de negócio.",
-        "odooPage.stack":"Python · PostgreSQL · XML · QWeb",
-        "odooPage.repo":"Ver repo",
-        "odooPage.odooSite":"Site do Odoo",
-        "odooPage.what":"O que faço com Odoo",
-        "odooPage.f1":"Instalação e configuração (virtualenv, dependências) em Community/Enterprise.",
-        "odooPage.f2":"Migrações e upgrades entre versões.",
-        "odooPage.f3":"Design de base de dados + importação/exportação.",
-        "odooPage.f4":"Módulos sob medida: modelos, views, wizards, segurança, relatórios.",
-        "odooPage.f5":"SEO/otimização web + documentação (README) e fluxo Git.",
-        "odooPage.modulesKicker":"Addons",
-        "odooPage.modulesTitle":"Módulos em destaque",
-        "odooPage.modulesSub":"Amostra de addons reais em Compras, Inventário, MRP, Contabilidade, Vendas e RH.",
-        "odooPage.m1":"Wizard de leitura QR para capturar dados do pedido de compra (documento de pesca).",
-        "odooPage.m2":"Novos modelos de inventário + zonas/subzonas, embarcações e controle de qualidade ligado a lotes escaneados.",
-        "odooPage.m3":"Checkpoint de balança para empacotamento, com contexto de empresa e confirmação.",
-        "odooPage.m4":"Restrições contábeis: usuário autorizador de pagamento + grupos e filtros de segurança.",
-        "odooPage.m5":"Calcula data prevista e exibe em formulários e relatórios.",
-        "odooPage.m6":"Inclui cláusulas GDPR em PDFs de pedidos e faturas via configurações.",
-        "odooPage.m7":"Conta o número de faturas por pedido e adiciona filtros na busca.",
-        "odooPage.m8":"Filtro padrão “Esta semana” e filtros rápidos (hoje/ontem/esta semana/semana passada).",
-        "odooPage.m9":"Permite editar depois check‑in/check‑out da própria presença.",
-        "odooPage.cta":"Quer a lista completa e o código? Visite o repositório no GitHub.",
-        "odooPage.openRepo":"Abrir ModulosOdoo"
-      },
-      fr:{
-        "odooPage.back":"Retour",
-        "odooPage.title":"Portfolio Odoo",
-        "odooPage.subtitle":"Travaux Odoo sélectionnés : addons sur mesure, migrations et intégrations pour des workflows réels.",
-        "odooPage.stack":"Python · PostgreSQL · XML · QWeb",
-        "odooPage.repo":"Voir le repo",
-        "odooPage.odooSite":"Site Odoo",
-        "odooPage.what":"Ce que je fais avec Odoo",
-        "odooPage.f1":"Installation et configuration (virtualenv, dépendances) Community/Enterprise.",
-        "odooPage.f2":"Migrations et upgrades de versions.",
-        "odooPage.f3":"Conception BD + import/export.",
-        "odooPage.f4":"Modules sur mesure : modèles, vues, wizards, sécurité, rapports.",
-        "odooPage.f5":"SEO/optimisation web + documentation (README) et workflow Git.",
-        "odooPage.modulesKicker":"Addons",
-        "odooPage.modulesTitle":"Modules sélectionnés",
-        "odooPage.modulesSub":"Aperçu d’addons réels sur Achats, Stock, MRP, Comptabilité, Ventes et RH.",
-        "odooPage.m1":"Wizard de lecture QR pour capturer les données d’achat (document de pêche).",
-        "odooPage.m2":"Nouveaux modèles stock + zones/sous‑zones, navires et contrôle qualité liés aux lots scannés.",
-        "odooPage.m3":"Checkpoint balance pour le packaging, avec contexte société et confirmation.",
-        "odooPage.m4":"Restrictions comptables : utilisateur autorisant le paiement + groupes et filtres.",
-        "odooPage.m5":"Calcule la date estimée et l’affiche dans formulaires et rapports.",
-        "odooPage.m6":"Ajoute des clauses GDPR aux PDFs commandes/factures via paramètres.",
-        "odooPage.m7":"Compte le nombre de factures par commande et ajoute des filtres.",
-        "odooPage.m8":"Filtre par défaut “Cette semaine” et filtres rapides (aujourd’hui/hier/cette semaine/semaine dernière).",
-        "odooPage.m9":"Permet d’éditer ensuite ses propres pointages (entrée/sortie).",
-        "odooPage.cta":"Vous voulez la liste complète et le code ? Visitez le dépôt GitHub.",
-        "odooPage.openRepo":"Ouvrir ModulosOdoo"
-      }
+      pt:{},
+      fr:{}
+    };
+
+    T.pt = {...T.en,
+      "nav.home":"Início",
+      "nav.data":"Análise de Dados",
+      "nav.training":"Formação",
+      "nav.more":"Mais",
+      "nav.tech":"Tecnologias",
+      "nav.experience":"Experiência",
+      "nav.education":"Educação",
+      "nav.contact":"Contato",
+      "nav.odooConsulting":"Consultoria",
+      "nav.odooDevelopment":"Desenvolvimento",
+      "nav.odooIntegrations":"Integrações",
+      "odooPage.back":"Voltar ao CV",
+      "odooPage.title":"Portfólio Odoo",
+      "odooPage.repo":"Ver repo"
+    };
+
+    T.fr = {...T.en,
+      "nav.home":"Accueil",
+      "nav.data":"Analyse de Données",
+      "nav.training":"Formation",
+      "nav.more":"Plus",
+      "nav.tech":"Technologies",
+      "nav.experience":"Expérience",
+      "nav.education":"Éducation",
+      "nav.contact":"Contact",
+      "nav.odooConsulting":"Conseil",
+      "nav.odooDevelopment":"Développement",
+      "nav.odooIntegrations":"Intégrations",
+      "odooPage.back":"Retour au CV",
+      "odooPage.title":"Portfolio Odoo",
+      "odooPage.repo":"Voir le repo"
     };
 
     const DEFAULT_LANG = "en";
+    const LANG_LABEL = {en:"EN", es:"ES", pt:"BR", fr:"FR"};
     const getLang = () => localStorage.getItem("lang") || DEFAULT_LANG;
 
     function applyLang(lang){
@@ -491,10 +855,16 @@
         const v = (T[lang] && T[lang][k]) || (T[DEFAULT_LANG] && T[DEFAULT_LANG][k]);
         if (v) el.textContent = v;
       });
-      document.querySelectorAll(".flag-btn").forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+
+      document.querySelectorAll(".lang-option").forEach(b => {
+        b.classList.toggle("active", b.dataset.lang === lang);
+      });
+
+      const current = document.getElementById("langCurrent");
+      if (current) current.textContent = LANG_LABEL[lang] || "EN";
     }
 
-    document.querySelectorAll(".flag-btn").forEach(btn => {
+    document.querySelectorAll(".lang-option").forEach(btn => {
       btn.addEventListener("click", () => {
         localStorage.setItem("lang", btn.dataset.lang);
         applyLang(btn.dataset.lang);
@@ -502,6 +872,10 @@
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const io = new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show");}),{threshold:0.12});
+    document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
     applyLang(getLang());
   </script>
 </body>

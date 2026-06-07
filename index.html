@@ -18,9 +18,11 @@
 <body data-bs-spy="scroll" data-bs-target="#topNav" tabindex="-1">
   <div class="noise"></div>
 
- <!-- NAV -->
+
+
+<!-- NAV -->
 <nav id="topNav" class="navbar navbar-expand-lg topbar sticky-top">
-  <div class="container py-2">
+  <div class="container-fluid px-4 px-xl-5 py-2">
     <a class="navbar-brand fw-bold text-white" href="#home">LP</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-label="Open menu">
@@ -28,51 +30,146 @@
     </button>
 
     <div id="navLinks" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-        <li class="nav-item"><a class="nav-link" href="#home" data-i18n="nav.home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#odoo" data-i18n="nav.odoo">Odoo</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#tech" data-i18n="nav.tech">Technologies</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav.experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#home" data-i18n="nav.home">Home</a>
+        </li>
+
+        <!-- Odoo dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#odoo" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.odoo">
+            Odoo
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#odoo">Consulting</a></li>
+            <li><a class="dropdown-item" href="#odoo">Development</a></li>
+            <li><a class="dropdown-item" href="#odoo">Integrations</a></li>
+            <li><a class="dropdown-item" href="odoo.html">Portfolio</a></li>
+          </ul>
+        </li>
+
+        <!-- AI & Automation dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#ai" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.ai">
+            AI & Automation
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#ai">Copilot</a></li>
+            <li><a class="dropdown-item" href="#ai">AI Agents</a></li>
+            <li><a class="dropdown-item" href="#ai">Automation</a></li>
+            <li><a class="dropdown-item" href="ai.html">Case Studies</a></li>
+          </ul>
+        </li>
+
+        <!-- Data Analytics dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#data_analytics" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.data_analytics">
+            Data Analytics
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#data_analytics">BI & Dashboards</a></li>
+            <li><a class="dropdown-item" href="#data_analytics">Python Analytics</a></li>
+            <li><a class="dropdown-item" href="#data_analytics">Machine Learning</a></li>
+          </ul>
+        </li>
+
+        <!-- Training dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#training" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.training">
+            Training
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#training">AI & Automation</a></li>
+            <li><a class="dropdown-item" href="#training">Microsoft 365 & Copilot</a></li>
+             <li><a class="dropdown-item" href="#training">Learning Resources</a></li>
+            <li><a class="dropdown-item" href="#training">Data Analytics</a></li>
+            <li><a class="dropdown-item" href="#training">Odoo Training</a></li>
+             <li><a class="dropdown-item" href="#training">Programming</a></li>
+          </ul>
+        </li>
+
+        <!-- Creative dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#design_market" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Creative
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#design_market">Graphic Design</a></li>
+            <li><a class="dropdown-item" href="#design_market">SEO</a></li>
+            <li><a class="dropdown-item" href="#design_market">Video Production</a></li>
+            <li><a class="dropdown-item" href="design.html">Portfolio</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a>
+        </li>
 
         <!-- More dropdown -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.more">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             More
           </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-            <li><a class="dropdown-item" href="#ai" data-i18n="nav.ai">AI Automation</a></li>
-            <li><a class="dropdown-item" href="#design_market" data-i18n="nav.design_market">Design & Marketing</a></li>
-            <li><hr class="dropdown-divider"></li>
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+            <li><a class="dropdown-item" href="#tech" data-i18n="nav.tech">Technologies</a></li>
+            <li><a class="dropdown-item" href="#experience" data-i18n="nav.experience">Experience</a></li>
             <li><a class="dropdown-item" href="#education" data-i18n="nav.education">Education</a></li>
+            <li><a class="dropdown-item" href="#contact" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </li>
       </ul>
 
-      <!-- Flags -->
-      <div class="d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
-        <button class="flag-btn" type="button" data-lang="en" aria-label="English" title="English">🇬🇧</button>
-        <button class="flag-btn" type="button" data-lang="es" aria-label="Español" title="Español">🇪🇸</button>
-        <button class="flag-btn" type="button" data-lang="pt" aria-label="Português" title="Português">🇧🇷</button>
-        <button class="flag-btn" type="button" data-lang="fr" aria-label="Français" title="Français">🇫🇷</button>
-      </div>
+      <!-- Right actions: language + social -->
+      <div class="nav-actions d-flex align-items-center gap-2 ms-lg-3 mt-3 mt-lg-0">
 
-      <!-- Social -->
-      <div class="d-flex gap-2 ms-lg-3 mt-3 mt-lg-0">
+        <!-- Language dropdown -->
+        <div class="dropdown">
+          <button class="lang-btn dropdown-toggle active" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Language" title="Language">
+            EN
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end lang-dropdown">
+            <li>
+              <button class="dropdown-item lang-option" type="button" data-lang="en" aria-label="English" title="English">
+                🇬🇧 English
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item lang-option" type="button" data-lang="es" aria-label="Español" title="Español">
+                🇪🇸 Español
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item lang-option" type="button" data-lang="pt" aria-label="Português" title="Português">
+                🇧🇷 Português
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item lang-option" type="button" data-lang="fr" aria-label="Français" title="Français">
+                🇫🇷 Français
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social -->
         <a class="icon-btn" href="https://github.com/LucPinheiro" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
           <i class="bi bi-github"></i>
         </a>
+
         <a class="icon-btn" href="https://www.linkedin.com/in/lupinheiroofficial/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
           <i class="bi bi-linkedin"></i>
         </a>
+
         <a class="icon-btn" href="mailto:lupinheiro.dev@gmail.com" aria-label="Email" title="Email">
           <i class="bi bi-envelope"></i>
         </a>
       </div>
-    </div> <!-- /#navLinks -->
-  </div> <!-- /.container -->
+    </div>
+  </div>
 </nav>
+
 
 
   <!-- HERO -->
@@ -159,88 +256,419 @@
     </section>
   </header>
 
-  <!-- ODOO -->
-  <section id="odoo">
-    <div class="container">
-      <div class="row g-3">
-        <div class="col-12 col-lg-7">
-          <div class="glow-card reveal">
-            <div class="glow-inner">
-              <div class="d-flex align-items-start justify-content-between flex-wrap gap-2">
-                <div>
-                  <div class="kicker mb-2">ERP</div>
-                  <h2 class="h2 fw-bold mb-2">Odoo</h2>
-                  <p class="text-muted-2 mb-0" data-i18n="odoo.lead">
-                    Setup, customization and development of Odoo Community/Enterprise: custom modules, integrations, migrations and reporting.
-                  </p>
-                </div>
-                <div class="d-flex gap-2">
-                  <a class="btn btn-outline-glow btn-sm" href="https://github.com/LucPinheiro/ModulosOdoo" target="_blank" rel="noreferrer">
-                    <i class="bi bi-github me-1"></i> ModulosOdoo
+<!-- ODOO -->
+<section id="odoo">
+  <div class="container">
+    <div class="row g-3">
+
+      <div class="col-12 col-lg-7">
+        <div class="glow-card reveal">
+          <div class="glow-inner">
+
+            <div class="d-flex align-items-start justify-content-between flex-wrap gap-2">
+              <div>
+                <div class="kicker mb-2">ERP · BUSINESS SOLUTIONS</div>
+                <h2 class="h2 fw-bold mb-2">Odoo Consulting & Development</h2>
+
+                <p class="text-muted-2 mb-0">
+                  Functional and technical Odoo support: process analysis,
+                  custom modules, integrations, migrations and business reporting.
+                </p>
+              </div>
+
+              <div class="d-flex gap-2">
+                <a class="btn btn-outline-glow btn-sm"
+                   href="https://github.com/LucPinheiro/ModulosOdoo"
+                   target="_blank"
+                   rel="noreferrer">
+                  <i class="bi bi-github me-1"></i> ModulosOdoo
+                </a>
+              </div>
+            </div>
+
+            <div class="row g-3 mt-3">
+
+              <!-- Consulting -->
+              <div class="col-12 col-md-6">
+                <div class="mini-card h-100">
+                  <div class="fw-semibold mb-2">
+                    <i class="bi bi-diagram-3 me-2"></i>
+                    Consulting
+                  </div>
+
+                  <div class="small text-muted-2">
+                    Process analysis, module configuration,
+                    user support, functional testing and workflow improvement.
+                  </div>
+
+                  <a class="mini-link" href="odoo.html#odoo-consulting">
+                    Learn more
+                    <i class="bi bi-arrow-right"></i>
                   </a>
                 </div>
               </div>
 
-              <div class="row g-3 mt-3">
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="odoo.k1.title">Custom modules</div>
-                    <div class="small text-muted-2" data-i18n="odoo.k1.desc">Python models, views, security, wizards and QWeb reports.</div>
+              <!-- Development -->
+              <div class="col-12 col-md-6">
+                <div class="mini-card h-100">
+                  <div class="fw-semibold mb-2">
+                    <i class="bi bi-code-slash me-2"></i>
+                    Development
                   </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="odoo.k2.title">Integrations</div>
-                    <div class="small text-muted-2" data-i18n="odoo.k2.desc">APIs, data import/export and workflow automation.</div>
+
+                  <div class="small text-muted-2">
+                    Python models, views, security rules,
+                    wizards, QWeb reports, automated actions and business logic.
                   </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="odoo.k3.title">Migrations</div>
-                    <div class="small text-muted-2" data-i18n="odoo.k3.desc">Upgrades across versions and dependency management.</div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="mini-card">
-                    <div class="fw-semibold" data-i18n="odoo.k4.title">Business domains</div>
-                    <div class="small text-muted-2" data-i18n="odoo.k4.desc">Food industry, logistics, maintenance, CRM, e‑learning and e‑commerce.</div>
-                  </div>
+
+                  <a class="mini-link" href="odoo.html#odoo-development">
+                    Learn more
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
                 </div>
               </div>
 
-              <div class="d-flex flex-wrap gap-2 mt-4">
-                <a class="btn btn-odoo px-4" href="odoo.html">
-                  <span data-i18n="odoo.btn">Open Odoo portfolio</span> <i class="bi bi-arrow-right ms-1"></i>
-                </a>
-                <a class="btn btn-outline-glow px-4" href="#experience">
-                  <span data-i18n="odoo.expBtn">See Odoo experience</span> <i class="bi bi-briefcase ms-1"></i>
-                </a>
+              <!-- Integrations -->
+              <div class="col-12 col-md-6">
+                <div class="mini-card h-100">
+                  <div class="fw-semibold mb-2">
+                    <i class="bi bi-plug me-2"></i>
+                    Integrations
+                  </div>
+
+                  <div class="small text-muted-2">
+                    API connections, CSV/Excel imports,
+                    external systems, CRM workflows,
+                    reporting flows and automation.
+                  </div>
+
+                  <a class="mini-link" href="odoo.html#odoo-integrations">
+                    Learn more
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
               </div>
+
+              <!-- Portfolio -->
+              <div class="col-12 col-md-6">
+                <div class="mini-card h-100">
+                  <div class="fw-semibold mb-2">
+                    <i class="bi bi-box-seam me-2"></i>
+                    Portfolio
+                  </div>
+
+                  <div class="small text-muted-2">
+                    Real examples in sales, inventory,
+                    MRP, accounting, reports, logistics,
+                    website and business processes.
+                  </div>
+
+                  <a class="mini-link" href="odoo.html#odoo-portfolio">
+                    Open portfolio
+                    <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+
             </div>
+
+            <div class="d-flex flex-wrap gap-2 mt-4">
+
+              <a class="btn btn-odoo px-4"
+                 href="odoo.html#odoo-portfolio">
+                Open Odoo Portfolio
+                <i class="bi bi-arrow-right ms-1"></i>
+              </a>
+
+              <a class="btn btn-outline-glow px-4"
+                 href="odoo.html#odoo-consulting">
+                See Odoo Consulting
+                <i class="bi bi-briefcase ms-1"></i>
+              </a>
+
+            </div>
+
           </div>
         </div>
+      </div>
 
-        <div class="col-12 col-lg-5">
-          <div class="glow-card reveal">
-            <div class="glow-inner">
-              <div class="kicker mb-2" data-i18n="odoo.projectsKicker">Selected work</div>
-              <ul class="mb-0 text-muted-2">
-                <li data-i18n="odoo.p1">QR-based capture for purchase/fishing documents</li>
-                <li data-i18n="odoo.p2">Inventory models + quality control tests</li>
-                <li data-i18n="odoo.p3">Weight scale checkpoint for packaging (MRP)</li>
-                <li data-i18n="odoo.p4">Accounting authorization fields & security groups</li>
-                <li data-i18n="odoo.p5">Sales: expected delivery date + GDPR footer reports</li>
-              </ul>
-              <hr class="my-4" style="border-color: rgba(255,255,255,.10)">
-              <div class="small text-muted-2" data-i18n="odoo.note">
-                Tip: the Odoo page uses the same “slide” style, but with Odoo brand colors.
+      <!-- RIGHT PANEL -->
+      <div class="col-12 col-lg-5">
+        <div class="glow-card reveal">
+          <div class="glow-inner">
+
+            <div class="kicker mb-2">
+              Selected Odoo Work
+            </div>
+
+            <h3 class="h5 fw-bold mb-3">
+              What I Have Built
+            </h3>
+
+            <div class="mini-card mb-3">
+              <div class="fw-semibold">
+                <i class="bi bi-qr-code-scan me-2"></i>
+                Document Capture
               </div>
+              <div class="small text-muted-2">
+                QR-based capture for purchase and fishing documents.
+              </div>
+            </div>
+
+            <div class="mini-card mb-3">
+              <div class="fw-semibold">
+                <i class="bi bi-boxes me-2"></i>
+                Inventory & Quality
+              </div>
+              <div class="small text-muted-2">
+                Inventory models, quality control tests
+                and product traceability.
+              </div>
+            </div>
+
+            <div class="mini-card mb-3">
+              <div class="fw-semibold">
+                <i class="bi bi-speedometer2 me-2"></i>
+                Manufacturing Support
+              </div>
+              <div class="small text-muted-2">
+                Weight scale checkpoint for packaging
+                and MRP processes.
+              </div>
+            </div>
+
+            <div class="mini-card mb-3">
+              <div class="fw-semibold">
+                <i class="bi bi-shield-check me-2"></i>
+                Accounting & Security
+              </div>
+              <div class="small text-muted-2">
+                Authorization fields, security groups
+                and controlled access.
+              </div>
+            </div>
+
+            <div class="mini-card">
+              <div class="fw-semibold">
+                <i class="bi bi-file-earmark-text me-2"></i>
+                Sales Reports
+              </div>
+              <div class="small text-muted-2">
+                Expected delivery dates,
+                GDPR footer reports and QWeb customization.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- DATA ANALYTICS -->
+<section id="data_analytics" class="section">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3 reveal">
+      <div>
+        <div class="kicker mb-2" data-i18n="data.kicker">DATA</div>
+        <h2 class="h2 fw-bold mb-1" data-i18n="data.title">Data Analytics</h2>
+        <p class="text-muted-2 mb-0" data-i18n="data.subtitle">
+          Data analysis, reporting and dashboards to transform business information into clear decisions.
+        </p>
+      </div>
+    </div>
+
+    <div class="glow-card reveal">
+      <div class="glow-inner">
+        <div class="row g-3">
+          <div class="col-12 col-lg-7">
+            <ul class="mb-0 text-muted-2">
+              <li data-i18n="data.1">Data cleaning and transformation with Python, Pandas and NumPy.</li>
+              <li data-i18n="data.2">Excel and Power BI reports for business monitoring.</li>
+              <li data-i18n="data.3">Dashboards, KPIs and visual summaries for decision-making.</li>
+              <li data-i18n="data.4">Data import/export processes connected with Odoo and business tools.</li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-lg-5">
+            <div class="mini-card h-100">
+              <div class="fw-semibold mb-2" data-i18n="data.toolsTitle">Tools</div>
+              <p class="small text-muted-2 mb-0" data-i18n="data.toolsDesc">
+                Python · Pandas · NumPy · Excel · Power BI · PostgreSQL · CSV/JSON workflows
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section id="training">
+  <div class="container">
+
+    <div class="reveal mb-4">
+      <div class="kicker mb-2">TRAINING</div>
+
+      <h2 class="h2 fw-bold mb-2">
+        Training
+      </h2>
+
+      <p class="text-muted-2 mb-0">
+        Professional ICT training for companies, digital transformation,
+        Artificial Intelligence, Microsoft 365, Odoo and private programming lessons.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- CORPORATE TRAINING -->
+      <div class="col-12 col-lg-6">
+        <div class="glow-card reveal h-100">
+          <div class="glow-inner">
+
+            <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+              <h3 class="h3 fw-bold mb-0">
+                Corporate Training
+              </h3>
+
+              <a class="mini-link"
+                 href="training.html#training-experience">
+                Experience
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+
+            <ul class="mb-4 text-muted-2">
+              <li>Artificial Intelligence and AI tools for business.</li>
+              <li>Microsoft 365 and Copilot for productivity.</li>
+              <li>Digital transformation and process improvement.</li>
+              <li>Data analysis, Excel and practical reporting.</li>
+            </ul>
+
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-glow"
+                 href="training.html#training-ai">
+                AI & Automation
+              </a>
+
+              <a class="btn btn-outline-glow"
+                 href="training.html#training-m365">
+                Microsoft 365
+              </a>
+
+              <a class="btn btn-outline-glow"
+                 href="training.html#training-data">
+                Data Analytics
+              </a>
+
+              <a class="btn btn-outline-glow"
+                 href="training.html#training-digital">
+                Digital Skills
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PRIVATE LESSONS -->
+      <div class="col-12 col-lg-6">
+        <div class="glow-card reveal h-100">
+          <div class="glow-inner">
+
+            <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+              <h3 class="h3 fw-bold mb-0">
+                Private Lessons
+              </h3>
+
+              <a class="mini-link"
+                 href="training.html#training-certifications">
+                Certifications
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+
+            <ul class="mb-4 text-muted-2">
+              <li>Programming fundamentals and practical exercises.</li>
+              <li>Python, Java, JavaScript and web development.</li>
+              <li>Support for students, projects and portfolio preparation.</li>
+              <li>Personalized learning adapted to each student.</li>
+            </ul>
+
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-glow"
+                 href="training.html#training-programming">
+                Programming
+              </a>
+
+              <a class="btn btn-outline-glow"
+                 href="training.html#training-odoo">
+                Odoo Training
+              </a>
+
+              <a class="btn btn-outline-glow"
+                 href="training.html#training-experience">
+                Experience
+              </a>
+
+              <a class="btn btn-outline-glow"
+                 href="training.html#training-certifications">
+                Certifications
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-12">
+  <div class="glow-card reveal">
+    <div class="glow-inner">
+
+      <h3 class="h4 fw-bold mb-3">
+        Learning Resources
+      </h3>
+
+      <p class="text-muted-2 mb-4">
+        Open educational roadmaps and study materials covering
+        Artificial Intelligence, Machine Learning, Big Data,
+        Data Analytics and modern software development.
+      </p>
+
+      <div class="d-flex flex-wrap gap-2">
+
+   <a class="btn btn-glow"
+   href="training.html#training-resources">
+  AI Roadmap
+</a>
+
+<a class="btn btn-outline-glow"
+   href="training.html#training-resources">
+  Big Data Roadmap
+</a>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <div class="text-center mt-4">
+      <a class="mini-link justify-content-center"
+         href="training.html">
+        Explore all training courses, workshops and certifications
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
 
   <!-- PROJECTS -->
   <section id="projects">
@@ -398,7 +826,7 @@
     <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3 reveal">
       <div>
         <div class="kicker mb-2" data-i18n="ai.kicker">AI</div>
-        <h2 class="h2 fw-bold mb-1" data-i18n="ai.title">AI Automation</h2>
+        <h2 class="h2 fw-bold mb-1" data-i18n="ai.title">AI & Automation</h2>
         <p class="text-muted-2 mb-0" data-i18n="ai.subtitle">
           Generative AI + automation tools to speed up operations, reporting and support.
         </p>
